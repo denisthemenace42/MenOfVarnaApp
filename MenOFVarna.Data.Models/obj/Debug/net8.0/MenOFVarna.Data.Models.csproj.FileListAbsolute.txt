@@ -1,0 +1,12 @@
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\bin\Debug\net8.0\MenOFVarna.Data.Models.deps.json
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\bin\Debug\net8.0\MenOFVarna.Data.Models.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\bin\Debug\net8.0\MenOFVarna.Data.Models.pdb
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.csproj.AssemblyReference.cache
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.AssemblyInfoInputs.cache
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.AssemblyInfo.cs
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.csproj.CoreCompileInputs.cache
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\refint\MenOFVarna.Data.Models.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\MenOFVarna.Data.Models.pdb
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Data.Models\obj\Debug\net8.0\ref\MenOFVarna.Data.Models.dll

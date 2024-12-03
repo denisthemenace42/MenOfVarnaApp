@@ -1,0 +1,22 @@
+﻿@using MenOFVarna.Data.Models;
+@model Picture
+
+<h2>Add a New Movie</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Title">Picture Name</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div>
+        <label for="Author">Author</label>
+        <input asp-for="Author" class="form-control" />
+    </div>
+    <div>
+        <label for="Description">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Create Picture</button>
+</form>
+
+<a asp-action="Index">Back to Pictures List</a>

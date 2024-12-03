@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|d:\\csharp_menofvarnaapp_nov2024\\menofvarna.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|solutionrelative:menofvarna.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|d:\\csharp_menofvarnaapp_nov2024\\menofvarna.web\\views\\picture\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|solutionrelative:menofvarna.web\\views\\picture\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|d:\\csharp_menofvarnaapp_nov2024\\menofvarna.web\\views\\picture\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|solutionrelative:menofvarna.web\\views\\picture\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|d:\\csharp_menofvarnaapp_nov2024\\menofvarna.web\\views\\picture\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|solutionrelative:menofvarna.web\\views\\picture\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|d:\\csharp_menofvarnaapp_nov2024\\menofvarna.web\\controllers\\picturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B311CBE7-5503-4AB3-9893-C38E60E66203}|MenOFVarna.Web\\MenOFVarna.Web.csproj|solutionrelative:menofvarna.web\\controllers\\picturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MenOFVarna.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MenOFVarna.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T16:42:10.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Picture\\Details.cshtml",
+              "RelativeDocumentMoniker": "MenOFVarna.Web\\Views\\Picture\\Details.cshtml",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Picture\\Details.cshtml",
+              "RelativeToolTip": "MenOFVarna.Web\\Views\\Picture\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T16:39:54.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Picture\\Create.cshtml",
+              "RelativeDocumentMoniker": "MenOFVarna.Web\\Views\\Picture\\Create.cshtml",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Picture\\Create.cshtml",
+              "RelativeToolTip": "MenOFVarna.Web\\Views\\Picture\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T16:20:05.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Picture\\Index.cshtml",
+              "RelativeDocumentMoniker": "MenOFVarna.Web\\Views\\Picture\\Index.cshtml",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Views\\Picture\\Index.cshtml",
+              "RelativeToolTip": "MenOFVarna.Web\\Views\\Picture\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T16:11:40.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PictureController.cs",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Controllers\\PictureController.cs",
+              "RelativeDocumentMoniker": "MenOFVarna.Web\\Controllers\\PictureController.cs",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\MenOFVarna.Web\\Controllers\\PictureController.cs",
+              "RelativeToolTip": "MenOFVarna.Web\\Controllers\\PictureController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwDgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T16:03:59.96Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

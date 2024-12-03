@@ -1,0 +1,12 @@
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\bin\Debug\net8.0\MenOFVarna.Web.ViewModels.deps.json
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\bin\Debug\net8.0\MenOFVarna.Web.ViewModels.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\bin\Debug\net8.0\MenOFVarna.Web.ViewModels.pdb
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.AssemblyInfoInputs.cache
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.AssemblyInfo.cs
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\refint\MenOFVarna.Web.ViewModels.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.pdb
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\ref\MenOFVarna.Web.ViewModels.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\MenOFVarna.Web.ViewModels\obj\Debug\net8.0\MenOFVarna.Web.ViewModels.csproj.AssemblyReference.cache
