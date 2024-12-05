@@ -8,7 +8,7 @@ namespace MenOFVarna.Common
 {
     public static class EntityValidationConstants
     {
-        public static class Picture
+        public static class Picture 
         {
             public const int TitleMaxLength = 50;
             public const int DescriptionMaxLength = 500;

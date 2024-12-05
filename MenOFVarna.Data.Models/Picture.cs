@@ -14,5 +14,7 @@
         public string Description { get; set; } = null!;
 
         public string Author { get; set; } = null!;
+
+        public virtual ICollection<EventPicture> PictureEvenets { get; set; } = new HashSet<EventPicture>();
     }
 }
