@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Men Of Varna.props" />
+</Project>

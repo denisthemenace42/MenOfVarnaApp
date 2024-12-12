@@ -1,0 +1,261 @@
+.welcome-section {
+    background-color: #1f1f1f; /* Dark background */
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff; /* White text for contrast */
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #ccc; /* Light grey text */
+}
+
+    .welcome-section .btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+        background-color: #007bff; /* Dark background for buttons */
+        color: #fff; /* White text for buttons */
+        border: 2px solid #007bff;
+    }
+
+        .welcome-section .btn:hover {
+            background-color: #0056b3; /* White button on hover */
+            color: #fff; /* Dark text on hover */
+            border: 2px solid #0056b3;
+        }
+
+.explore-section {
+    background-color: #2c2c2c; /* Dark grey background */
+    padding: 20px 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.explore-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff; /* White text */
+}
+
+.explore-section img {
+    max-width: 90%;
+    max-height: 150px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+}
+
+.explore-section h5 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #ddd; /* Light grey text */
+}
+
+.explore-section p {
+    font-size: 0.95rem;
+    color: #aaa; /* Lighter grey text */
+}
+
+#footer-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ccc; /* Soft grey text for footer quote */
+}
+
+@media (max-height: 800px) {
+    .welcome-section {
+        padding: 15px;
+    }
+
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    .explore-section {
+        padding: 15px;
+    }
+
+    .explore-section .section-title {
+        font-size: 1.5rem;
+    }
+
+    .explore-section img {
+        max-height: 120px;
+    }
+
+    .explore-section h5 {
+        font-size: 1rem;
+    }
+
+    .explore-section p {
+        font-size: 0.9rem;
+    }
+}
+
+.navbar .nav-link {
+    color: #fff !important; /* White text for links */
+}
+
+.navbar-brand {
+    color: #fff !important; /* White text for brand name */
+}
+
+#new-quote-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    background-color: #007bff;
+    border: 2px solid #0056b3;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#new-quote-btn:hover {
+    color: #000; /* Dark text on hover */
+    background-color: #fff; /* Light background on hover */
+    border-color: #000; /* Dark border on hover */
+    transform: scale(1.1);
+}
+
+.form-control {
+    background-color: #333; /* Dark input fields */
+    border: 1px solid #444; /* Slightly lighter border */
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff; /* White text in inputs */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-label-add-edit {
+    font-weight: bold;
+    color: #ddd; /* Light grey text for labels */
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #fff; /* White border on focus */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* White glow on focus */
+    outline: none;
+}
+/* Custom header styles */
+header {
+    background-color: #000; /* Change background color */
+    padding: 20px; /* Add custom padding */
+}
+
+    header .navbar {
+        font-family: 'Arial', sans-serif; /* Change font family */
+        color: #fff; /* Change text color */
+    }
+
+        header .navbar a {
+            color: #fff; /* Change link color */
+            text-decoration: none; /* Remove underline */
+        }
+
+            header .navbar a:hover {
+                color: #fff; /* Change link hover color */
+            }
+
+    header .navbar-toggler-icon {
+        background-color: #fff; /* Change hamburger menu icon color */
+    }
+
+
+.btn-primary {
+    background-color: #000; /* Set background to black */
+    border-color: #000; /* Set border to black */
+}
+
+    .btn-primary:hover {
+        background-color: #333; /* Set background on hover */
+        border-color: #333; /* Set border on hover */
+    }
+
+/* Custom info button color */
+.btn-info {
+    background-color: #000; /* Set background to black */
+    border-color: #000; /* Set border to black */
+    color: #fff; /* Set text color to white */
+}
+
+    .btn-info:hover {
+        background-color: #333; /* Darken background on hover */
+        border-color: #333; /* Darken border on hover */
+    }
+
+    .btn-info:active {
+        background-color: #444; /* Darker shade when clicked */
+        border-color: #444; /* Darker border on click */
+    }
+
+    .btn-info:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25); /* Add focus outline */
+    }
+
+/* Custom styles for navigation links */
+.nav-link {
+    color: #000; /* Set text color to black */
+}
+
+    .nav-link:hover {
+        color: #fff; /* Change text color to white on hover */
+        background-color: #007bff; /* Set background color on hover */
+    }
+
+    .nav-link:focus {
+        color: #fff; /* Change text color to white on focus */
+        background-color: #007bff; /* Set background color on focus */
+    }
+
+/* Custom styles for dropdown items */
+.dropdown-item {
+    color: #000; /* Set text color to black */
+    background-color: #000; /* Set background color to white */
+}
+
+    .dropdown-item:hover {
+        color: #fff; /* Change text color to white on hover */
+        background-color: #007bff; /* Set background color on hover (blue) */
+    }
+
+    .dropdown-item:focus {
+        color: #fff; /* Change text color to white on focus */
+        background-color: #007bff; /* Set background color on focus (blue) */
+    }
+
+/* Dropdown menu divider customization */
+.dropdown-divider {
+    border-color: #000; /* Set the divider color to black */
+}
+
+/* Override the default success button color to blue */
+.btn-success {
+    background-color: #007bff; /* Set background color to blue */
+    border-color: #007bff; /* Set border color to blue */
+}
+
+    .btn-success:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        border-color: #0056b3; /* Darker blue border on hover */
+    }
+
+    .btn-success:focus, .btn-success:active {
+        background-color: #0056b3; /* Darker blue when focused or active */
+        border-color: #0056b3; /* Darker blue border when focused or active */
+    }
+
+footer.bg-dark {
+    background-color: #000 !important; /* Ensures the background is black */
+}
