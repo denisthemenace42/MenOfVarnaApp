@@ -10,6 +10,7 @@ namespace Men_Of_Varna
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -38,7 +39,7 @@ namespace Men_Of_Varna
 
 
             var app = builder.Build();
-
+           
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

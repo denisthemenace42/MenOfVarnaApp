@@ -1,0 +1,92 @@
+﻿@using Men_Of_Varna.Models.Destinations
+@using Men_Of_Varna.Data.Models
+@model Men_Of_Varna.Data.Models.Event
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<hr />
+
+<div class="row justify-content-center" style="margin: 0 auto; max-width: 800px;">
+    <!-- Event Image -->
+    <div class="col-md-4 text-center">
+        @if (!string.IsNullOrEmpty(Model.PictureUrl))
+        {
+            <img src="@Model.PictureUrl" class="img-fluid" style="max-width: 100%; height: auto;" alt="@Model.Name" />
+        }
+        else
+        {
+            <img src="~/images/default-image.jpg" class="img-fluid" style="max-width: 100%; height: auto;" alt="No Image Available" />
+        }
+    </div>
+
+    <!-- Event Details -->
+    <div class="col-md-8">
+        <div class="card-body">
+            <p class="card-text">@Model.Description</p>
+            <hr />
+            <p class="card-text"><small class="text-muted">Published On: @Model.PublishedOn.ToString("dd/MM/yyyy")</small></p>
+            <p class="card-text"><small class="text-muted">Created By: @Model.CreatedBy</small></p>
+            <p class="card-text"><small class="text-muted">Upcoming Event: @(Model.IsUpcoming ? "Yes" : "No")</small></p>
+            <hr />
+        </div>
+
+        <div class="card-footer text-center">
+            <div class="d-flex justify-content-between align-items-center">
+                <a asp-controller="Event" asp-action="Index" class="btn btn-warning d-flex justify-content-center align-items-center flex-fill mx-1">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+                @if (User?.Identity?.IsAuthenticated == true && !Model.UserEvents.Any(ue => ue.UserId == User.Identity.Name))
+                {
+                    @if (Model?.IsUpcoming == true)
+                    {
+                        <form asp-controller="Event" asp-action="JoinEvent" method="post" class="d-flex justify-content-center align-items-center flex-fill mx-1">
+                            <input type="hidden" name="eventId" value="@Model.Id" />
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="fas fa-check-circle"></i> Attend Event
+                            </button>
+                        </form>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Comments Section -->
+<div class="mt-4">
+    <h3>Comments</h3>
+    <div class="comments-list">
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="comment-item">
+                <div class="comment-author">
+                    <strong>@comment.Author</strong>
+                    <span class="text-muted">@comment.CreatedAt.ToString("dd/MM/yyyy HH:mm")</span>
+                </div>
+                <p>@comment.Content</p>
+                <hr />
+            </div>
+        }
+    </div>
+
+    @if (User?.Identity?.IsAuthenticated == true)
+    {
+        <form asp-controller="Event" asp-action="AddComment" method="post" class="mt-3">
+            <input type="hidden" name="eventId" value="@Model.Id" />
+            <div class="form-group">
+                <textarea name="content" class="form-control" rows="4" placeholder="Add your comment..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+    }
+    else
+    {
+        <div class="alert alert-warning mt-3">
+            Please <a href="@Url.Action("Login", "Account")">login</a> to post a comment.
+        </div>
+    }
+</div>

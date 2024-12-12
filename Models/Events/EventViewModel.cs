@@ -10,6 +10,7 @@
         public int AttendeesCount { get; set; }
         public bool IsPublisher { get; set; }
         public bool IsAttending { get; set; }
+        public bool? IsUpcoming { get; set; }
     }
 
 }
