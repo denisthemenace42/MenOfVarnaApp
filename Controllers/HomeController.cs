@@ -1,4 +1,6 @@
-﻿using Horizons.Models;
+﻿
+using Men_Of_Varna.Controllers;
+using Men_Of_Varna.Models.Destinations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;

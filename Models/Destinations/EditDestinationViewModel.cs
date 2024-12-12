@@ -1,6 +1,6 @@
-﻿using Horizons.ViewModels;
+﻿
 
-namespace Horizons.Models
+namespace Men_Of_Varna.Models.Destinations
 {
     public class EditDestinationViewModel
     {
@@ -16,5 +16,5 @@ namespace Horizons.Models
         public string PublisherId { get; set; } = null!;
     }
 
-   
+
 }

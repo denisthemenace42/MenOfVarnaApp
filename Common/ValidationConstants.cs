@@ -1,4 +1,4 @@
-﻿namespace Horizons.Common
+﻿namespace Men_Of_Varna.Common
 {
     public static class ValidationConstants
     {

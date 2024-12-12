@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using static Horizons.Common.ValidationConstants;
+using static Men_Of_Varna.Common.ValidationConstants;
 
-namespace Horizons.Data.Models
+namespace Men_Of_Varna.Data.Models
 {
     public class Destination
     {

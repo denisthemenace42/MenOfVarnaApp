@@ -1,8 +1,8 @@
-﻿using Horizons.Data.Models;
-using Horizons.Models;
+﻿using Men_Of_Varna.Data.Models;
+using Men_Of_Varna.Models.Destinations;
 
 
-namespace Horizons.Contracts
+namespace Men_Of_Varna.Contracts
 {
     public interface IDestinationService
     {

@@ -47,6 +47,13 @@
                                     <i class="fas fa-home"></i> Home
                                     <span class="visually-hidden">(current)</span>
                                 </a>
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-controller="Event" asp-action="Index">
+                                    <i class="fa fa-map-marker"></i> Events
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                                
                             }
                         </li>
                         @if (User?.Identity?.IsAuthenticated ?? false)

@@ -1,4 +1,4 @@
-﻿namespace Horizons.Models
+﻿namespace Men_Of_Varna.Models.Destinations
 {
     public class DeleteDestinationViewModel
     {

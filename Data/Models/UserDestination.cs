@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace Horizons.Data.Models
+namespace Men_Of_Varna.Data.Models
 {
     public class UserDestination
     {

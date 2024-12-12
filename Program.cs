@@ -1,10 +1,10 @@
-using Horizons.Contracts;
-using Horizons.Data;
-using Horizons.Services;
+using Men_Of_Varna.Contracts;
+using Men_Of_Varna.Services;
+using Men_Of_Varna.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace DeskMarket
+namespace Men_Of_Varna
 {
     public class Program
     {
@@ -33,7 +33,9 @@ namespace DeskMarket
                 options.Password.RequireUppercase = false;
             });
 
-            builder.Services.AddScoped<IDestinationService,DestinationService>();
+            builder.Services.AddScoped<IDestinationService, DestinationService>();
+            builder.Services.AddScoped<IEventService, EventService>();
+
 
             var app = builder.Build();
 

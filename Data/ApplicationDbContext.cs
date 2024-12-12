@@ -1,10 +1,10 @@
-﻿using Horizons.Data.Models;
+﻿using Men_Of_Varna.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 
-namespace Horizons.Data
+namespace Men_Of_Varna.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -19,14 +19,14 @@ namespace Horizons.Data
             var defaultUser = new IdentityUser
             {
                 Id = "7699db7d-964f-4782-8209-d76562e0fece",
-                UserName = "admin@horizons.com",
-                NormalizedUserName = "ADMIN@HORIZONS.COM",
-                Email = "admin@horizons.com",
-                NormalizedEmail = "ADMIN@HORIZONS.COM",
+                UserName = "admin@menofvarna.com",
+                NormalizedUserName = "ADMIN@MENOFVARNA.COM",
+                Email = "admin@menofvarna.com",
+                NormalizedEmail = "ADMIN@MENOFVARNA.COM",
                 EmailConfirmed = true,
                 PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(
-                    new IdentityUser { UserName = "admin@horizons.com" },
-                    "Admin123!")
+                    new IdentityUser { UserName = "admin@menofvarna.com" },
+                    "320513")
             };
             builder.Entity<IdentityUser>().HasData(defaultUser);
 
@@ -35,8 +35,18 @@ namespace Horizons.Data
 
             builder.Entity<Destination>()
             .HasOne(d => d.Terrain)
-            .WithMany(t => t.Destinations) 
+            .WithMany(t => t.Destinations)
             .HasForeignKey(d => d.TerrainId);
+
+            builder.Entity<UserEvent>()
+        .HasKey(ue => new { ue.UserId, ue.EventId }); // Composite primary key
+
+           
+
+            builder.Entity<UserEvent>()
+                .HasOne(ue => ue.Event)
+                .WithMany(e => e.UserEvents)
+                .HasForeignKey(ue => ue.EventId);
 
             builder.Entity<Terrain>()
                 .HasData(
@@ -49,6 +59,45 @@ namespace Horizons.Data
                     new Terrain { Id = 7, Name = "Cave" },
                     new Terrain { Id = 8, Name = "Canyon" }
                 );
+
+            builder.Entity<Event>().HasData(
+                new Event
+                {
+                    Id = 1,
+                    Name = "Beach Cleanup",
+                    Description = "Join us to clean up the beautiful beaches of Varna.",
+                    PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
+                    PublishedOn = new DateTime(2024, 1, 5),
+                    CreatedBy = "Men of Varna Admin"
+                },
+                new Event
+                {
+                    Id = 2,
+                    Name = "Mountain Hike",
+                    Description = "An adventurous hike through the scenic mountains.",
+                    PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
+                    PublishedOn = new DateTime(2024, 2, 12),
+                    CreatedBy = "Denis Mehmed"
+                },
+                new Event
+                {
+                    Id = 3,
+                    Name = "Community Yoga",
+                    Description = "Relax and rejuvenate with a free yoga session for all.",
+                    PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
+                    PublishedOn = new DateTime(2024, 3, 8),
+                    CreatedBy = "Denis Mehmed"
+                },
+                new Event
+                {
+                    Id = 4,
+                    Name = "Book Club Meeting",
+                    Description = "Discussing 'The Way of the Superior Man' by David Deida.",
+                    PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
+                    PublishedOn = new DateTime(2024, 4, 1),
+                    CreatedBy = "Men of Varna Admin"
+                });
+
 
 
             builder.Entity<Destination>().HasData(
@@ -84,14 +133,25 @@ namespace Horizons.Data
             PublishedOn = DateTime.Now,
             TerrainId = 7,
             IsDeleted = false
+        });
+    
         }
-    );
-        }
+        
 
         public DbSet<Destination> Destinations { get; set; } 
 
         public DbSet<Terrain> Terrains { get; set; }
 
         public DbSet<UserDestination> UserDestinations { get; set; }
+
+        public DbSet<Event> Events { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Feedback> Feedbacks { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
     }
 }

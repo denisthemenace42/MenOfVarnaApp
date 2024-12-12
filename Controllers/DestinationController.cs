@@ -1,16 +1,14 @@
-﻿using Horizons.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using Horizons.Contracts;
 using Horizons.Controllers;
-using Horizons.ViewModels;
-using Microsoft.EntityFrameworkCore;
-using Horizons.Data;
-using Horizons.Models;
+using Microsoft.EntityFrameworkCore;  
 using Microsoft.AspNetCore.Authorization;
-using Horizons.Data.Models;
+using Men_Of_Varna.Data.Models;
+using Men_Of_Varna.Models.Destinations;
+using Men_Of_Varna.Contracts;
+using Men_Of_Varna.Controllers;
 
-public class DestinationController : BaseController
+public class DestinationController : BaseController 
 {
   
     private readonly IDestinationService destinationService;

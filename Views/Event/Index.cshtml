@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "All Events";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+    <h2>@ViewData["Title"]</h2>
+    @if (User?.Identity?.IsAuthenticated == true)
+    {
+        <a asp-controller="Event" asp-action="Add" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Event
+        </a>
+    }
+</div>
+<hr />
+
+<div class="row text-center">
+    @foreach (var eventItem in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100" style="width: 100%;">
+                @if (!string.IsNullOrEmpty(eventItem.ImageUrl))
+                {
+                    <img src="@eventItem.ImageUrl" class="card-img-top" style="max-height: 150px; object-fit: contain;" alt="@eventItem.Name">
+                }
+                else
+                {
+                    <img src="~/images/default-image.jpg" class="card-img-top" style="max-height: 150px; object-fit: contain;" alt="No Image Available">
+                }
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@eventItem.Name</h5>
+                    <p class="card-text">@eventItem.Description</p>
+                    <p class="card-text"><small>Published on: @eventItem.PublishedOn.ToString("MMM dd, yyyy")</small></p>
+                    <div class="d-flex justify-content-between mt-auto">
+                        @if (User?.Identity?.IsAuthenticated == true && !eventItem.IsPublisher && !eventItem.IsAttending)
+                        {
+                            <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info me-2 w-50">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <form asp-controller="Event" asp-action="Attend" method="post" class="w-50">
+                                <input type="hidden" name="id" value="@eventItem.Id" />
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fas fa-check"></i> Attend
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info w-100">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

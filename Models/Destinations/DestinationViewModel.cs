@@ -1,4 +1,4 @@
-﻿namespace Horizons.Models
+﻿namespace Men_Of_Varna.Models.Destinations
 {
     public class DestinationViewModel
     {
@@ -15,7 +15,7 @@
         public bool IsPublisher { get; set; }
 
         public bool IsFavorite { get; set; }
-        
+
         public bool? IsDeleted { get; set; }
     }
 }

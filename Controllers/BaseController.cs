@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿    using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Horizons.Controllers
+namespace Men_Of_Varna.Controllers
 {
     [Authorize]
     public class BaseController : Controller

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Horizons.Common;
+using Men_Of_Varna.Common;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace Horizons.Models
+namespace Men_Of_Varna.Models.Destinations
 {
     public class AddDestinationViewModel
     {

@@ -8118,11 +8118,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denisthemenace42\\Desktop\\SoftUniExam\\Horizons-Skeleton\\Men Of Varna\\Men Of Varna.csproj",
+      "projectUniqueName": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Men Of Varna.csproj",
       "projectName": "Men Of Varna",
-      "projectPath": "C:\\Users\\denisthemenace42\\Desktop\\SoftUniExam\\Horizons-Skeleton\\Men Of Varna\\Men Of Varna.csproj",
+      "projectPath": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Men Of Varna.csproj",
       "packagesPath": "C:\\Users\\denisthemenace42\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denisthemenace42\\Desktop\\SoftUniExam\\Horizons-Skeleton\\Men Of Varna\\obj\\",
+      "outputPath": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,11 +1,11 @@
-﻿using Horizons.Contracts;
-using Horizons.Data;
-using Horizons.Data.Models;
-using Horizons.Models;
+﻿using Men_Of_Varna.Contracts;
+using Men_Of_Varna.Data;
+using Men_Of_Varna.Data.Models;
+using Men_Of_Varna.Models.Destinations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Horizons.Services
+namespace Men_Of_Varna.Services
 {
     public class DestinationService : IDestinationService
     {

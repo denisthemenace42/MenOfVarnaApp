@@ -17,91 +17,95 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Men_Of_Varna
 build_property.RootNamespace = Men_Of_Varna
-build_property.ProjectDir = C:\Users\denisthemenace42\Desktop\SoftUniExam\Horizons-Skeleton\Men Of Varna\
+build_property.ProjectDir = D:\CSHARP_MenOfVarnaApp_Nov2024\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\denisthemenace42\Desktop\SoftUniExam\Horizons-Skeleton\Men Of Varna
+build_property.MSBuildProjectDirectory = D:\CSHARP_MenOfVarnaApp_Nov2024
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Destination/Add.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Destination/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25cQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Destination/Delete.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Destination/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Destination/Details.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Destination/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Destination/Edit.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Destination/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Destination/Favorites.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Destination/Favorites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25cRmF2b3JpdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Destination/Index.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Destination/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Home/Index.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Home/Privacy.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Shared/Error.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Shared/_LoginPartial.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/_ViewImports.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/_ViewStart.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/denisthemenace42/Desktop/SoftUniExam/Horizons-Skeleton/Men Of Varna/Views/Shared/_Layout.cshtml]
+[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9q47t7elbf
