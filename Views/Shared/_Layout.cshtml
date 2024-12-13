@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 @if (User?.Identity?.IsAuthenticated ?? false)
                 {
-                    <a class="navbar-brand" asp-controller="Destination" asp-action="Index">
+                    <a class="navbar-brand" asp-controller="Event" asp-action="Index">
                         <i class="fas fa-anchor"></i> Men Of Varna
                         <span class="visually-hidden">(current)</span>
                     </a>
@@ -36,7 +36,7 @@
                         <li class="nav-item">
                             @if (User?.Identity?.IsAuthenticated ?? false)
                             {
-                                <a class="nav-link active" asp-controller="Destination" asp-action="Index">
+                                <a class="nav-link active" asp-controller="Event" asp-action="Index">
                                     <i class="fas fa-home"></i> Home
                                     <span class="visually-hidden">(current)</span>
                                 </a>
@@ -64,32 +64,13 @@
                         </li>
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Events</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" asp-controller="Destination" asp-action="Index">
-                                        <i class="fas fa-list"></i> All Events</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="Destination" asp-action="Add">
-                                        <i class="fas fa-plus"></i> Add Event</a>
-                                </div>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Destination" asp-action="Favorites">
-                                    <i class="fas fa-heart"></i> Favorites</a>
+                                <a class="nav-link" asp-controller="Event" asp-action="MyEvents">
+                                    <i class="fas fa-heart"></i> My Events
+                                </a>
                             </li>
                         }
-                        else
-                        {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-map-marker-alt"></i> Events</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" asp-controller="Destination" asp-action="Index">
-                                        <i class="fas fa-list"></i> All Events</a>
-                                </div>
-                            </li>
-                        }
+                        
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

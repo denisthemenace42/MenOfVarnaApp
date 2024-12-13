@@ -1,6 +1,5 @@
-﻿@using Men_Of_Varna.Models.Destinations
-@using Men_Of_Varna.Data.Models
-@model Men_Of_Varna.Data.Models.Event
+﻿@model Men_Of_Varna.Models.Events.EventDetailViewModel
+
 @{
     ViewData["Title"] = "Event Details";
 }
@@ -31,6 +30,7 @@
             <p class="card-text"><small class="text-muted">Published On: @Model.PublishedOn.ToString("dd/MM/yyyy")</small></p>
             <p class="card-text"><small class="text-muted">Created By: @Model.CreatedBy</small></p>
             <p class="card-text"><small class="text-muted">Upcoming Event: @(Model.IsUpcoming ? "Yes" : "No")</small></p>
+            <p class="card-text"><small class="text-muted">Attendees: @Model.AttendeesCount</small></p>
             <hr />
         </div>
 
@@ -39,17 +39,20 @@
                 <a asp-controller="Event" asp-action="Index" class="btn btn-warning d-flex justify-content-center align-items-center flex-fill mx-1">
                     <i class="fas fa-arrow-left"></i> Back
                 </a>
-                @if (User?.Identity?.IsAuthenticated == true && !Model.UserEvents.Any(ue => ue.UserId == User.Identity.Name))
+                @if (User?.Identity?.IsAuthenticated == true && !Model.IsAttending && Model.IsUpcoming)
                 {
-                    @if (Model?.IsUpcoming == true)
-                    {
-                        <form asp-controller="Event" asp-action="JoinEvent" method="post" class="d-flex justify-content-center align-items-center flex-fill mx-1">
-                            <input type="hidden" name="eventId" value="@Model.Id" />
-                            <button type="submit" class="btn btn-success w-100">
-                                <i class="fas fa-check-circle"></i> Attend Event
-                            </button>
-                        </form>
-                    }
+                    <form asp-controller="Event" asp-action="Attend" method="post" class="d-flex justify-content-center align-items-center flex-fill mx-1">
+                        <input type="hidden" name="id" value="@Model.Id" />
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="fas fa-check-circle"></i> Attend Event
+                        </button>
+                    </form>
+                }
+                else if (Model.IsAttending)
+                {
+                    <button class="btn btn-success w-100" disabled>
+                        <i class="fas fa-check-circle"></i> You're Attending
+                    </button>
                 }
             </div>
         </div>

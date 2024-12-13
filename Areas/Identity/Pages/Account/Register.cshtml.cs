@@ -105,7 +105,7 @@ namespace Horizons.Areas.Identity.Pages.Account
         {
             if (User?.Identity?.IsAuthenticated ?? false)
             {
-                return RedirectToAction("Index", "Destination");
+                return RedirectToAction("Index", "Event");
             }
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();

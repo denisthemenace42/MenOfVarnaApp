@@ -88,7 +88,7 @@ namespace Horizons.Areas.Identity.Pages.Account
         {
             if (User?.Identity?.IsAuthenticated ?? false)
             {
-                return RedirectToAction("Index", "Destination");
+                return RedirectToAction("Index", "Event");
             }
             if (!string.IsNullOrEmpty(ErrorMessage))
             {

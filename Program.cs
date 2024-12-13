@@ -34,7 +34,7 @@ namespace Men_Of_Varna
                 options.Password.RequireUppercase = false;
             });
 
-            builder.Services.AddScoped<IDestinationService, DestinationService>();
+
             builder.Services.AddScoped<IEventService, EventService>();
 
 

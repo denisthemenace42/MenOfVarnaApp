@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Men_Of_Varna.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241212204759_AdminTest")]
-    partial class AdminTest
+    [Migration("20241213104621_Update")]
+    partial class Update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,84 +52,6 @@ namespace Men_Of_Varna.Migrations
                     b.HasIndex("EventId");
 
                     b.ToTable("Comments");
-                });
-
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.Destination", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
-
-                    b.Property<DateTime>("PublishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PublisherId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("TerrainId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PublisherId");
-
-                    b.HasIndex("TerrainId");
-
-                    b.ToTable("Destinations");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "A stunning historical landmark nestled in the Rila Mountains.",
-                            ImageUrl = "https://img.etimg.com/thumb/msid-112831459,width-640,height-480,imgsize-2180890,resizemode-4/rila-monastery-bulgaria.jpg",
-                            IsDeleted = false,
-                            Name = "Rila Monastery",
-                            PublishedOn = new DateTime(2024, 12, 12, 22, 47, 58, 608, DateTimeKind.Local).AddTicks(7593),
-                            PublisherId = "7699db7d-964f-4782-8209-d76562e0fece",
-                            TerrainId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "The sand at Durankulak Beach showcases a pristine golden color, creating a beautiful contrast against the azure waters of the Black Sea.",
-                            ImageUrl = "https://travelplanner.ro/blog/wp-content/uploads/2023/01/durankulak-beach-1-850x550.jpg.webp",
-                            IsDeleted = false,
-                            Name = "Durankulak Beach",
-                            PublishedOn = new DateTime(2024, 12, 12, 22, 47, 58, 608, DateTimeKind.Local).AddTicks(7603),
-                            PublisherId = "7699db7d-964f-4782-8209-d76562e0fece",
-                            TerrainId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "A mysterious cave located in the Rhodope Mountains.",
-                            ImageUrl = "https://detskotobnr.binar.bg/wp-content/uploads/2017/11/Diavolsko_garlo_17.jpg",
-                            IsDeleted = false,
-                            Name = "Devil's Throat Cave",
-                            PublishedOn = new DateTime(2024, 12, 12, 22, 47, 58, 608, DateTimeKind.Local).AddTicks(7605),
-                            PublisherId = "7699db7d-964f-4782-8209-d76562e0fece",
-                            TerrainId = 7
-                        });
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Event", b =>
@@ -251,18 +173,16 @@ namespace Men_Of_Varna.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Orders");
                 });
@@ -300,90 +220,15 @@ namespace Men_Of_Varna.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.Terrain", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Terrains");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Mountain"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Beach"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Forest"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Plain"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Urban"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Village"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Cave"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "Canyon"
-                        });
-                });
-
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.UserDestination", b =>
+            modelBuilder.Entity("Men_Of_Varna.Data.Models.UserEvent", b =>
                 {
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(0);
 
-                    b.Property<int>("DestinationId")
+                    b.Property<int>("EventId")
                         .HasColumnType("int")
                         .HasColumnOrder(1);
-
-                    b.HasKey("UserId", "DestinationId");
-
-                    b.HasIndex("DestinationId");
-
-                    b.ToTable("UserDestinations");
-                });
-
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.UserEvent", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("JoinedOn")
                         .HasColumnType("datetime2");
@@ -392,7 +237,7 @@ namespace Men_Of_Varna.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("UserEvent");
+                    b.ToTable("UserEvents");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -516,15 +361,15 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = "7699db7d-964f-4782-8209-d76562e0fece",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fe6de29b-c352-46bc-b3ee-5442731450cd",
+                            ConcurrencyStamp = "b21ff670-ee2c-460b-9f62-36ee11b891b3",
                             Email = "admin@menofvarna.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MENOFVARNA.COM",
                             NormalizedUserName = "ADMIN@MENOFVARNA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJaspBBxzF6N2e7lh4QkfWmPQS3rVXN7q4hp6d3WyDDi60wobidhmXOSKgxm/ifFgA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPFmD6szhRO5uH2lv4MbrC3Pdt4cFTTsySbe4loogNivLp77z3o32H9eP5gwYxQ3xQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a51f8c1d-9095-432a-9ea2-460dd6d9fe75",
+                            SecurityStamp = "c03a1794-57a3-4edc-8fca-4413d56d7ce1",
                             TwoFactorEnabled = false,
                             UserName = "admin@menofvarna.com"
                         });
@@ -626,25 +471,6 @@ namespace Men_Of_Varna.Migrations
                     b.Navigation("Event");
                 });
 
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.Destination", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
-                        .WithMany()
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Men_Of_Varna.Data.Models.Terrain", "Terrain")
-                        .WithMany("Destinations")
-                        .HasForeignKey("TerrainId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Publisher");
-
-                    b.Navigation("Terrain");
-                });
-
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Feedback", b =>
                 {
                     b.HasOne("Men_Of_Varna.Data.Models.Event", "Event")
@@ -662,11 +488,13 @@ namespace Men_Of_Varna.Migrations
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Order", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Customer")
                         .WithMany()
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Product", b =>
@@ -674,25 +502,6 @@ namespace Men_Of_Varna.Migrations
                     b.HasOne("Men_Of_Varna.Data.Models.Order", null)
                         .WithMany("Products")
                         .HasForeignKey("OrderId");
-                });
-
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.UserDestination", b =>
-                {
-                    b.HasOne("Men_Of_Varna.Data.Models.Destination", "Destination")
-                        .WithMany("UsersDestinations")
-                        .HasForeignKey("DestinationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Destination");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.UserEvent", b =>
@@ -765,11 +574,6 @@ namespace Men_Of_Varna.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.Destination", b =>
-                {
-                    b.Navigation("UsersDestinations");
-                });
-
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Event", b =>
                 {
                     b.Navigation("Comments");
@@ -780,11 +584,6 @@ namespace Men_Of_Varna.Migrations
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Order", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.Terrain", b =>
-                {
-                    b.Navigation("Destinations");
                 });
 #pragma warning restore 612, 618
         }

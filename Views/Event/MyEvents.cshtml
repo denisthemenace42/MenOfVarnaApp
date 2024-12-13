@@ -1,0 +1,55 @@
+﻿@using Men_Of_Varna.Models.Events
+@model MyEventsViewModel
+
+@{
+    ViewData["Title"] = "My Events";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<hr />
+
+@if (Model == null || Model.Events == null || !Model.Events.Any())
+{
+    <div class="text-center mt-5">
+        <h4>You don't have any events added yet!</h4>
+        <p class="text-muted">Start attending and adding events to your list.</p>
+    </div>
+}
+else
+{
+    @foreach (var eventItem in Model.Events)
+    {
+        <div class="row align-items-center mb-4 py-3" style="border-bottom: 1px solid #ccc;">
+            <div class="col-md-2 text-center">
+                @if (!string.IsNullOrEmpty(eventItem.PictureUrl))
+                {
+                    <img src="@eventItem.PictureUrl" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="@eventItem.Name" />
+                }
+                else
+                {
+                    <img src="~/images/default-image.jpg" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="No Image Available" />
+                }
+            </div>
+            <div class="col-md-4 text-start">
+                <h5 class="mb-0">@eventItem.Name</h5>
+                <p class="text-muted mb-0"><small>Description: @eventItem.Description</small></p>
+            </div>
+            <div class="col-md-2 text-end">
+                <!-- Button to remove user from the event -->
+                <form asp-action="GiveUpOnEvent" method="post" asp-route-eventId="@eventItem.Id">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-times-circle"></i> Give Up
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+}
+
+<div class="text-center mt-5">
+    <a asp-controller="Event" asp-action="Index" class="btn btn-primary mt-3">
+        <i class="fas fa-arrow-left"></i> Back to Events
+    </a>
+</div>

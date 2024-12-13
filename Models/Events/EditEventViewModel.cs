@@ -1,8 +1,7 @@
-﻿using NuGet.Protocol.Core.Types;
-
-namespace Men_Of_Varna.Data.Models
+﻿
+namespace Men_Of_Varna.Models.Events
 {
-    public class Event
+    public class EditEventViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
@@ -10,10 +9,5 @@ namespace Men_Of_Varna.Data.Models
         public string PictureUrl { get; set; } = null!;
         public DateTime PublishedOn { get; set; }
         public string CreatedBy { get; set; } = null!;
-        public List<Comment> Comments { get; set; } = new();
-        public bool IsUpcoming { get; set; }
-        public ICollection<UserEvent> UserEvents { get; set; } = new List<UserEvent>();
-
     }
 }
-

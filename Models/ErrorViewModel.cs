@@ -1,4 +1,4 @@
-namespace Men_Of_Varna.Models.Destinations
+namespace Men_Of_Varna.Models
 {
     public class ErrorViewModel
     {

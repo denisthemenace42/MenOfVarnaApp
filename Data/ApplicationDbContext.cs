@@ -30,35 +30,26 @@ namespace Men_Of_Varna.Data
             };
             builder.Entity<IdentityUser>().HasData(defaultUser);
 
-            builder.Entity<UserDestination>()
-                   .HasKey(ud => new { ud.UserId, ud.DestinationId });
-
-            builder.Entity<Destination>()
-            .HasOne(d => d.Terrain)
-            .WithMany(t => t.Destinations)
-            .HasForeignKey(d => d.TerrainId);
 
             builder.Entity<UserEvent>()
-        .HasKey(ue => new { ue.UserId, ue.EventId }); // Composite primary key
+                   .HasKey(ue => new { ue.UserId, ue.EventId }); // Composite Key
 
-           
+            builder.Entity<UserEvent>()
+                .HasOne(ue => ue.User)
+                .WithMany() // Adjust if there are navigation properties in `IdentityUser`
+                .HasForeignKey(ue => ue.UserId);
 
             builder.Entity<UserEvent>()
                 .HasOne(ue => ue.Event)
-                .WithMany(e => e.UserEvents)
+                .WithMany(e => e.UserEvents) // Assuming Event has a collection of UserEvents
                 .HasForeignKey(ue => ue.EventId);
 
-            builder.Entity<Terrain>()
-                .HasData(
-                    new Terrain { Id = 1, Name = "Mountain" },
-                    new Terrain { Id = 2, Name = "Beach" },
-                    new Terrain { Id = 3, Name = "Forest" },
-                    new Terrain { Id = 4, Name = "Plain" },
-                    new Terrain { Id = 5, Name = "Urban" },
-                    new Terrain { Id = 6, Name = "Village" },
-                    new Terrain { Id = 7, Name = "Cave" },
-                    new Terrain { Id = 8, Name = "Canyon" }
-                );
+            builder.Entity<Order>()
+                   .HasOne(o => o.Customer)
+                   .WithMany()
+                   .HasForeignKey(o => o.CustomerId)
+                   .OnDelete(DeleteBehavior.Cascade);
+
 
             builder.Entity<Event>().HasData(
                 new Event
@@ -99,51 +90,9 @@ namespace Men_Of_Varna.Data
                 });
 
 
-
-            builder.Entity<Destination>().HasData(
-        new Destination
-        {
-            Id = 1,
-            Name = "Rila Monastery",
-            Description = "A stunning historical landmark nestled in the Rila Mountains.",
-            ImageUrl = "https://img.etimg.com/thumb/msid-112831459,width-640,height-480,imgsize-2180890,resizemode-4/rila-monastery-bulgaria.jpg",
-            PublisherId = "7699db7d-964f-4782-8209-d76562e0fece",
-            PublishedOn = DateTime.Now,
-            TerrainId = 1,
-            IsDeleted = false
-        },
-        new Destination
-        {
-            Id = 2,
-            Name = "Durankulak Beach",
-            Description = "The sand at Durankulak Beach showcases a pristine golden color, creating a beautiful contrast against the azure waters of the Black Sea.",
-            ImageUrl = "https://travelplanner.ro/blog/wp-content/uploads/2023/01/durankulak-beach-1-850x550.jpg.webp",
-            PublisherId = "7699db7d-964f-4782-8209-d76562e0fece",
-            PublishedOn = DateTime.Now,
-            TerrainId = 2,
-            IsDeleted = false
-        },
-        new Destination
-        {
-            Id = 3,
-            Name = "Devil's Throat Cave",
-            Description = "A mysterious cave located in the Rhodope Mountains.",
-            ImageUrl = "https://detskotobnr.binar.bg/wp-content/uploads/2017/11/Diavolsko_garlo_17.jpg",
-            PublisherId = "7699db7d-964f-4782-8209-d76562e0fece",
-            PublishedOn = DateTime.Now,
-            TerrainId = 7,
-            IsDeleted = false
-        });
     
         }
         
-
-        public DbSet<Destination> Destinations { get; set; } 
-
-        public DbSet<Terrain> Terrains { get; set; }
-
-        public DbSet<UserDestination> UserDestinations { get; set; }
-
         public DbSet<Event> Events { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
@@ -153,5 +102,7 @@ namespace Men_Of_Varna.Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<UserEvent> UserEvents { get; set; }
     }
 }
