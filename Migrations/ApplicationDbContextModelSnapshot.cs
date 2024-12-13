@@ -32,11 +32,13 @@ namespace Men_Of_Varna.Migrations
 
                     b.Property<string>("Author")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -61,18 +63,21 @@ namespace Men_Of_Varna.Migrations
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<bool>("IsUpcoming")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PictureUrl")
                         .IsRequired()
@@ -101,10 +106,10 @@ namespace Men_Of_Varna.Migrations
                             Id = 2,
                             CreatedBy = "Denis Mehmed",
                             Description = "An adventurous hike through the scenic mountains.",
-                            IsUpcoming = false,
+                            IsUpcoming = true,
                             Name = "Mountain Hike",
                             PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
-                            PublishedOn = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedOn = new DateTime(2024, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -138,7 +143,8 @@ namespace Men_Of_Varna.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<int?>("EventId")
                         .HasColumnType("int");
@@ -151,7 +157,7 @@ namespace Men_Of_Varna.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -159,7 +165,27 @@ namespace Men_Of_Varna.Migrations
 
                     b.HasIndex("ProductId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Feedbacks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "This is an amazing product! I love the motivational quote and the comfort of the T-shirt.",
+                            ProductId = 1,
+                            SubmittedOn = new DateTime(2024, 12, 13, 17, 28, 52, 177, DateTimeKind.Utc).AddTicks(6699),
+                            UserId = "7699db7d-964f-4782-8209-d76562e0fece"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "The canvas painting is beautiful! It adds a great vibe to my living room.",
+                            ProductId = 2,
+                            SubmittedOn = new DateTime(2024, 12, 13, 17, 28, 52, 177, DateTimeKind.Utc).AddTicks(6701),
+                            UserId = "7699db7d-964f-4782-8209-d76562e0fece"
+                        });
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Order", b =>
@@ -177,11 +203,83 @@ namespace Men_Of_Varna.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("OrderStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingCity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingZip")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CustomerId = "7699db7d-964f-4782-8209-d76562e0fece",
+                            OrderDate = new DateTime(2024, 12, 13, 17, 28, 52, 177, DateTimeKind.Utc).AddTicks(6720),
+                            OrderStatus = "Pending",
+                            ShippingAddress = "123 Main St",
+                            ShippingCity = "Varna",
+                            ShippingZip = "9000"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CustomerId = "7699db7d-964f-4782-8209-d76562e0fece",
+                            OrderDate = new DateTime(2024, 12, 12, 17, 28, 52, 177, DateTimeKind.Utc).AddTicks(6722),
+                            OrderStatus = "Shipped",
+                            ShippingAddress = "456 Secondary St",
+                            ShippingCity = "Varna",
+                            ShippingZip = "9001"
+                        });
+                });
+
+            modelBuilder.Entity("Men_Of_Varna.Data.Models.OrderProduct", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProducts");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderId = 1,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            OrderId = 1,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            OrderId = 2,
+                            ProductId = 1
+                        });
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Product", b =>
@@ -192,16 +290,22 @@ namespace Men_Of_Varna.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PictureUrl")
                         .IsRequired()
@@ -210,11 +314,47 @@ namespace Men_Of_Varna.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("StockQuantity")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
-
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Category = "Clothes",
+                            Description = "Elevate your style and mindset with this premium 100% cotton T-shirt featuring an inspiring motivational quote. Crafted for comfort and durability, this soft, breathable tee is perfect for daily wear, whether you're hitting the gym, running errands, or just lounging. The classic fit and bold design make it a standout piece in any wardrobe. Stay motivated, confident, and stylish with this high-quality T-shirt, designed to empower you every day. Ideal for those who believe in the power of positive thinking and self-motivation.",
+                            IsActive = true,
+                            Name = "T-Shirt",
+                            PictureUrl = "https://i.etsystatic.com/12381665/r/il/4e7f53/4106896277/il_570xN.4106896277_o801.jpg",
+                            Price = 25.99m,
+                            StockQuantity = 100
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "Art",
+                            Description = "Transform your space with this stunning canvas painting featuring a powerful motivational quote. Crafted with high-quality materials, this artwork adds both elegance and inspiration to any room. Whether displayed in your office, living room, or home gym, it serves as a constant reminder to stay focused, driven, and positive. With its timeless design and vibrant colors, this canvas painting is not only an affordable way to enhance your décor but also a daily source of motivation. Perfect for anyone looking to elevate their environment and mindset.",
+                            IsActive = true,
+                            Name = "Canvas Painting",
+                            PictureUrl = "https://chrisfabregasfineartprints.com/cdn/shop/products/chris-fabregas-fine-art-photography-motivational-canvas-12-x-18-no-frame-lion-motivational-canvas-inspirational-wall-decor-wall-art-print-40115752108341.jpg?v=1671702904&width=1875",
+                            Price = 109.99m,
+                            StockQuantity = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "Books",
+                            Description = "A transformative book for those seeking to master their purpose, relationships, and personal growth. \"The Way of the Superior Man\" is a premium resource for professionals and anyone committed to self-improvement. A must-read for cultivating discipline, strength, and clarity in all areas of life.",
+                            IsActive = true,
+                            Name = "The way of the superior - Man",
+                            PictureUrl = "https://covers.openlibrary.org/b/id/7387836-L.jpg",
+                            Price = 15.99m,
+                            StockQuantity = 25
+                        });
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.UserEvent", b =>
@@ -358,15 +498,15 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = "7699db7d-964f-4782-8209-d76562e0fece",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b21ff670-ee2c-460b-9f62-36ee11b891b3",
+                            ConcurrencyStamp = "32885117-3f81-46ec-acca-84f61eab5975",
                             Email = "admin@menofvarna.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MENOFVARNA.COM",
                             NormalizedUserName = "ADMIN@MENOFVARNA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPFmD6szhRO5uH2lv4MbrC3Pdt4cFTTsySbe4loogNivLp77z3o32H9eP5gwYxQ3xQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHRxwK9pL86avA9QqRYwjKPTpPznyTmG4Q3r4nA1W+dkVv6pBEMcAIVZDmu2sXSRMg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c03a1794-57a3-4edc-8fca-4413d56d7ce1",
+                            SecurityStamp = "bb29865f-3567-47a7-bfed-beaaa8309012",
                             TwoFactorEnabled = false,
                             UserName = "admin@menofvarna.com"
                         });
@@ -457,6 +597,21 @@ namespace Men_Of_Varna.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.Property<int>("OrdersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrdersId", "ProductsId");
+
+                    b.HasIndex("ProductsId");
+
+                    b.ToTable("OrderProduct");
+                });
+
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Comment", b =>
                 {
                     b.HasOne("Men_Of_Varna.Data.Models.Event", "Event")
@@ -478,9 +633,17 @@ namespace Men_Of_Varna.Migrations
                         .WithMany()
                         .HasForeignKey("ProductId");
 
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Event");
 
                     b.Navigation("Product");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Order", b =>
@@ -494,11 +657,23 @@ namespace Men_Of_Varna.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("Men_Of_Varna.Data.Models.Product", b =>
+            modelBuilder.Entity("Men_Of_Varna.Data.Models.OrderProduct", b =>
                 {
-                    b.HasOne("Men_Of_Varna.Data.Models.Order", null)
-                        .WithMany("Products")
-                        .HasForeignKey("OrderId");
+                    b.HasOne("Men_Of_Varna.Data.Models.Order", "Order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Men_Of_Varna.Data.Models.Product", "Product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.UserEvent", b =>
@@ -571,6 +746,21 @@ namespace Men_Of_Varna.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.HasOne("Men_Of_Varna.Data.Models.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrdersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Men_Of_Varna.Data.Models.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Event", b =>
                 {
                     b.Navigation("Comments");
@@ -580,7 +770,12 @@ namespace Men_Of_Varna.Migrations
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Order", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("Men_Of_Varna.Data.Models.Product", b =>
+                {
+                    b.Navigation("OrderProducts");
                 });
 #pragma warning restore 612, 618
         }

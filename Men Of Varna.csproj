@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Views\Feedback\" />
+    <Folder Include="Models\Store\" />
     <Folder Include="Views\Shop\" />
   </ItemGroup>
 

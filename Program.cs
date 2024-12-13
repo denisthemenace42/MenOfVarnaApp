@@ -37,6 +37,11 @@ namespace Men_Of_Varna
 
             builder.Services.AddScoped<IEventService, EventService>();
 
+            builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+
+            builder.Services.AddScoped<IProductService, ProductService>();
+
+            builder.Services.AddScoped<IOrderService, OrderService>();
 
             var app = builder.Build();
            
