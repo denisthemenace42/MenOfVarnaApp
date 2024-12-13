@@ -28,8 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Models\Store\" />
-    <Folder Include="Views\Shop\" />
   </ItemGroup>
 
 </Project>
