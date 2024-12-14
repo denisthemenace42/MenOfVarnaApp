@@ -18,9 +18,14 @@ namespace Men_Of_Varna.Data.Models
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow; 
 
-        [Required]
-        public int EventId { get; set; }
 
-        public Event Event { get; set; } = null!;
+        public int? EventId { get; set; }
+
+        public Event? Event { get; set; } = null!;
+
+        
+        public int? ProductId { get; set; }
+
+        public Product? Product { get; set; } = null!;
     }
 }

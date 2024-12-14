@@ -4,6 +4,7 @@ using Men_Of_Varna.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Men_Of_Varna.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241214201008_CommentSectionToProduct")]
+    partial class CommentSectionToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +46,7 @@ namespace Men_Of_Varna.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("EventId")
+                    b.Property<int>("EventId")
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductId")
@@ -169,14 +172,14 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = 1,
                             Content = "This is an amazing product! I love the motivational quote and the comfort of the T-shirt.",
-                            SubmittedOn = new DateTime(2024, 12, 14, 20, 17, 16, 4, DateTimeKind.Utc).AddTicks(6545),
+                            SubmittedOn = new DateTime(2024, 12, 14, 20, 10, 7, 538, DateTimeKind.Utc).AddTicks(923),
                             UserId = "7699db7d-964f-4782-8209-d76562e0fece"
                         },
                         new
                         {
                             Id = 2,
                             Content = "The canvas painting is beautiful! It adds a great vibe to my living room.",
-                            SubmittedOn = new DateTime(2024, 12, 14, 20, 17, 16, 4, DateTimeKind.Utc).AddTicks(6547),
+                            SubmittedOn = new DateTime(2024, 12, 14, 20, 10, 7, 538, DateTimeKind.Utc).AddTicks(925),
                             UserId = "7699db7d-964f-4782-8209-d76562e0fece"
                         });
                 });
@@ -223,7 +226,7 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = 1,
                             CustomerId = "7699db7d-964f-4782-8209-d76562e0fece",
-                            OrderDate = new DateTime(2024, 12, 14, 20, 17, 16, 4, DateTimeKind.Utc).AddTicks(6564),
+                            OrderDate = new DateTime(2024, 12, 14, 20, 10, 7, 538, DateTimeKind.Utc).AddTicks(941),
                             OrderStatus = "Pending",
                             ShippingAddress = "123 Main St",
                             ShippingCity = "Varna",
@@ -233,7 +236,7 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = 2,
                             CustomerId = "7699db7d-964f-4782-8209-d76562e0fece",
-                            OrderDate = new DateTime(2024, 12, 13, 20, 17, 16, 4, DateTimeKind.Utc).AddTicks(6566),
+                            OrderDate = new DateTime(2024, 12, 13, 20, 10, 7, 538, DateTimeKind.Utc).AddTicks(944),
                             OrderStatus = "Shipped",
                             ShippingAddress = "456 Secondary St",
                             ShippingCity = "Varna",
@@ -491,15 +494,15 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = "7699db7d-964f-4782-8209-d76562e0fece",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ac63d55a-6446-4129-8fc0-33ec92a4655e",
+                            ConcurrencyStamp = "0c5d1fcd-1634-4431-ac89-bec857f5b5c2",
                             Email = "admin@menofvarna.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MENOFVARNA.COM",
                             NormalizedUserName = "ADMIN@MENOFVARNA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECNcbM4j72MAe0sNZ96QjyIQj+Dvzq9YRnKy4vxJ2iQm22gUHOOSozzpY2RlXfleLQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPlRfTPJdhspr0yfKJ83RGpd7NpStdbq2DJQXoQfQMxUyv4T2DqAiRfeZUQwTwEEcQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1e7f917a-8a95-4fde-a7e6-27c567f82b38",
+                            SecurityStamp = "f82f74a0-b465-4c5f-8f65-00440145b698",
                             TwoFactorEnabled = false,
                             UserName = "admin@menofvarna.com"
                         });
@@ -609,15 +612,15 @@ namespace Men_Of_Varna.Migrations
                 {
                     b.HasOne("Men_Of_Varna.Data.Models.Event", "Event")
                         .WithMany("Comments")
-                        .HasForeignKey("EventId");
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Men_Of_Varna.Data.Models.Product", "Product")
+                    b.HasOne("Men_Of_Varna.Data.Models.Product", null)
                         .WithMany("Comments")
                         .HasForeignKey("ProductId");
 
                     b.Navigation("Event");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Men_Of_Varna.Data.Models.Feedback", b =>

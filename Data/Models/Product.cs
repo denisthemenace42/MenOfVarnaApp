@@ -29,5 +29,7 @@ namespace Men_Of_Varna.Data.Models
         public List<Order> Orders { get; set; } = new();
 
         public ICollection<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
+
+        public List<Comment> Comments { get; set; } = new();
     }
 }
