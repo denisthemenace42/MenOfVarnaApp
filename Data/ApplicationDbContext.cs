@@ -154,8 +154,7 @@ namespace Men_Of_Varna.Data
             UserId = "7699db7d-964f-4782-8209-d76562e0fece", 
             Content = "This is an amazing product! I love the motivational quote and the comfort of the T-shirt.",
             SubmittedOn = DateTime.UtcNow,
-            ProductId = 1, 
-            EventId = null 
+           
         },
         new Feedback
         {
@@ -163,8 +162,7 @@ namespace Men_Of_Varna.Data
             UserId = "7699db7d-964f-4782-8209-d76562e0fece", 
             Content = "The canvas painting is beautiful! It adds a great vibe to my living room.",
             SubmittedOn = DateTime.UtcNow,
-            ProductId = 2, 
-            EventId = null 
+           
         }
     );
             builder.Entity<Order>().HasData(

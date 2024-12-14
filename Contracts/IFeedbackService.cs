@@ -5,8 +5,6 @@ namespace Men_Of_Varna.Contracts
 {
     public interface IFeedbackService
     {
-        Task<FeedbackViewModel> GetFeedbackDetailsAsync(int id);
-
-        Task SaveFeedbackAsync(Feedback feedback);
+        Task SubmitFeedbackAsync(Feedback feedback);
     }
 }

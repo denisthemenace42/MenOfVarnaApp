@@ -20,14 +20,6 @@ namespace Men_Of_Varna.Data.Models
 
         public DateTime SubmittedOn { get; set; } = DateTime.UtcNow;
 
-        public int? EventId { get; set; }
-
-        [ForeignKey(nameof(EventId))]
-        public Event? Event { get; set; }
-
-        public int? ProductId { get; set; }
-
-        [ForeignKey(nameof(ProductId))]
-        public Product? Product { get; set; }
+       
     }
 }

@@ -16,26 +16,7 @@ namespace Men_Of_Varna.Services
         }
 
 
-        public async Task<FeedbackViewModel> GetFeedbackDetailsAsync(int id)
-        {
-            var feedback = await dbContext.Feedbacks
-         .Where(f => f.Id == id)
-         .FirstOrDefaultAsync();
-
-            if (feedback == null)
-            {
-                return null;  // Handle not found case if needed
-            }
-
-            return new FeedbackViewModel
-            {
-              
-                Content = feedback.Content,  // Populate the content field with existing feedback
-                                             // Add other necessary properties here
-            };
-        }
-
-        public async Task SaveFeedbackAsync(Feedback feedback)
+        public async Task SubmitFeedbackAsync(Feedback feedback)
         {
             dbContext.Feedbacks.Add(feedback);
             await dbContext.SaveChangesAsync();

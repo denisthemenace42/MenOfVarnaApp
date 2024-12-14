@@ -9,7 +9,7 @@
     <h2>@ViewData["Title"]</h2>
     @if (User?.Identity?.IsAuthenticated == true && User.Identity.Name == "admin@menofvarna.com")
     {
-        <a asp-controller="Product" asp-action="Add" class="btn btn-primary">
+        <a asp-controller="Store" asp-action="Add" class="btn btn-primary">
             <i class="fas fa-plus"></i> Add Product
         </a>
     }
@@ -49,10 +49,10 @@
                     <p class="card-text"><small>Category: @product.Category</small></p>
 
                     <div class="d-flex justify-content-between mt-auto">
-                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn btn-info me-2 w-100">
+                        <a asp-controller="Store" asp-action="Details" asp-route-id="@product.Id" class="btn btn-info me-2 w-100">
                             <i class="fas fa-info-circle"></i> Details
                         </a>
-                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn btn-warning w-100">
+                        <a asp-controller="Store" asp-action="Details" asp-route-id="@product.Id" class="btn btn-warning w-100">
                             <i class="fa-solid fa-cart-arrow-down"></i> Buy
                         </a>
                     </div>

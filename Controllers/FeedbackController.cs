@@ -4,6 +4,7 @@ using Men_Of_Varna.Models.Feedback;
 using Men_Of_Varna.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Men_Of_Varna.Controllers
 {
@@ -11,6 +12,7 @@ namespace Men_Of_Varna.Controllers
     {
         private readonly IFeedbackService feedbackService;
         private readonly UserManager<IdentityUser> userManager;
+       
 
         public FeedbackController(IFeedbackService feedbackService, UserManager<IdentityUser> userManager)
         {
@@ -20,39 +22,44 @@ namespace Men_Of_Varna.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int? eventId, int? productId)
         {
-            
-            var viewModel = new FeedbackViewModel();
+            var model = new FeedbackViewModel
+            {
+               
+            };
 
-            return View(viewModel);
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(FeedbackViewModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Submit(FeedbackViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var userId = userManager.GetUserId(User);
-                var feedback = new Feedback
-                {
-                    Content = model.Content,
-                    UserId = userId,  // Assuming you're using identity
-                    SubmittedOn = DateTime.UtcNow
-                };
-
-                await feedbackService.SaveFeedbackAsync(feedback);  // Save feedback via service layer
-
-                return RedirectToAction("ThankYou");  // Redirect to a thank-you page
+                return View("Index", model); // Return to the form with validation errors
             }
 
-            return View(model);  // If invalid, return the form with errors
+            var userId = userManager.GetUserId(User);
+            if (userId == null)
+            {
+                return Unauthorized(); // Ensure the user is logged in
+            }
+
+            var feedback = new Feedback
+            {
+                UserId = userId,
+                Content = model.Content,
+                SubmittedOn = DateTime.UtcNow,
+                
+            };
+
+            await feedbackService.SubmitFeedbackAsync(feedback);
+
+            TempData["SuccessMessage"] = "Your feedback has been submitted successfully.";
+            return RedirectToAction("Index", "Feedback"); 
         }
 
-        // Thank you page after successful feedback submission
-        public IActionResult ThankYou()
-        {
-            return View();
-        }
     }
 }

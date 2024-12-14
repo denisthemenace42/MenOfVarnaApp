@@ -84,6 +84,13 @@
                         }
                         
                     </ul>
+                    @if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                       
+                        <a class="nav-link" asp-controller="Order" asp-action="Index">
+                            <i class="fas fa-shopping-cart"></i> My Cart
+                        </a>
+                    }
                     <partial name="_LoginPartial" />
                 </div>
             </div>
