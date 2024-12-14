@@ -1,5 +1,65 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Men_Of_Varna.Models.Store
+@model EditProductViewModel
+
 @{
+    ViewData["Title"] = "Edit Product";
 }
+
+<div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form asp-action="Edit" method="post">
+            <div class="row">
+                <div class="col-sm-6 mb-2">
+                    <label asp-for="@Model.Name" class="form-label-add-edit">Product Name</label>
+                    <input asp-for="@Model.Name" class="form-control" />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6 mb-2">
+                    <label asp-for="@Model.Price" class="form-label-add-edit">Price</label>
+                    <input asp-for="@Model.Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 mb-2">
+                    <label asp-for="@Model.StockQuantity" class="form-label-add-edit">Stock Quantity</label>
+                    <input asp-for="@Model.StockQuantity" class="form-control" type="number" />
+                    <span asp-validation-for="@Model.StockQuantity" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6 mb-2">
+                    <label asp-for="@Model.Category" class="form-label-add-edit">Category</label>
+                    <input asp-for="@Model.Category" class="form-control" />
+                    <span asp-validation-for="@Model.Category" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="@Model.Description" class="form-label-add-edit">Description</label>
+                <textarea asp-for="@Model.Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="@Model.PictureUrl" class="form-label-add-edit">Image URL</label>
+                <input asp-for="@Model.PictureUrl" class="form-control" />
+                <span asp-validation-for="@Model.PictureUrl" class="text-danger"></span>
+            </div>
+
+            <input type="hidden" asp-for="@Model.Id" />
+
+            <div class="mb-2">
+                <button class="btn btn-warning w-100">
+                    <i class="fas fa-save"></i> Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

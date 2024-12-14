@@ -7,10 +7,14 @@ namespace Men_Of_Varna.Contracts
     {
         Task<IEnumerable<ProductViewModel>> GetAllActiveProductsAsync();
 
-        Task AddProductAsync(Product product);
+        Task AddProductAsync(AddProductViewModel product);
 
         Task<Product?> GetByIdAsync(int id);
 
         Task AddCommentAsync(int productId, string author, string content);
+
+        Task DeleteProductAsync(int id);
+
+        Task UpdateProductAsync(Product product);
     }
 }

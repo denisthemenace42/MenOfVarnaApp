@@ -34,16 +34,26 @@ namespace Men_Of_Varna.Services
                 .ToListAsync();
         }
 
-        public async Task AddProductAsync(Product product)
+        public async Task AddProductAsync(AddProductViewModel product)
         {
-            await dbContext.AddAsync(product);
+            var model = new Product
+            {
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                PictureUrl = product.PictureUrl,
+                StockQuantity = product.StockQuantity,
+                Category = product.Category,
+                IsActive = product.IsActive
+            };
+            dbContext.Products.Add(model);
             await dbContext.SaveChangesAsync();
         }
 
         public async Task<Product?> GetByIdAsync(int id)
         {
             return await dbContext.Products
-                .Include(p => p.Comments) // Include related comments if needed
+                .Include(p => p.Comments)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
@@ -60,6 +70,22 @@ namespace Men_Of_Varna.Services
                 ProductId = productId
             });
 
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteProductAsync(int id)
+        {
+            var product = await GetByIdAsync(id);
+            if (product != null)
+            {
+                dbContext.Remove(product);
+                await dbContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task UpdateProductAsync(Product product)
+        {
+            dbContext.Update(product);
             await dbContext.SaveChangesAsync();
         }
     }

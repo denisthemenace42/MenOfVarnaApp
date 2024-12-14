@@ -39,24 +39,14 @@ namespace Men_Of_Varna.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(AddProductViewModel model)
+        public async Task<IActionResult> Add(AddProductViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var product = new Product
-                {
-                    Name = model.Name,
-                    Description = model.Description,
-                    Price = model.Price,
-                    PictureUrl = model.PictureUrl,
-                    StockQuantity = model.StockQuantity,
-                    Category = model.Category,
-                    IsActive = model.IsActive
-                };
+                
 
-                productService.AddProductAsync(product);
+                await productService.AddProductAsync(model);
 
-                TempData["SuccessMessage"] = "Product has been added successfully!";
                 return RedirectToAction("Index");
             }
 
@@ -105,5 +95,85 @@ namespace Men_Of_Varna.Controllers
             await productService.AddCommentAsync(productId, User.Identity.Name, content);
             return RedirectToAction("Details", new { id = productId });
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var product = await productService.GetByIdAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var model = new DeleteProductViewModel
+            {
+                Id = product.Id,
+                Name = product.Name
+            };
+
+            return View(model);
+        }
+
+        
+        [HttpPost]
+        public async Task<IActionResult> Delete(DeleteProductViewModel model)
+        {
+            await productService.DeleteProductAsync(model.Id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var product = await productService.GetByIdAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var model = new EditProductViewModel
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                PictureUrl = product.PictureUrl,
+                StockQuantity = product.StockQuantity,
+                Category = product.Category,
+                IsActive = product.IsActive
+            };
+
+            return View(model);
+        }
+
+        // POST: Store/Edit
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditProductViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var product = new Product
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Description = model.Description,
+                Price = model.Price,
+                PictureUrl = model.PictureUrl,
+                StockQuantity = model.StockQuantity,
+                Category = model.Category,
+                IsActive = model.IsActive
+            };
+
+            await productService.UpdateProductAsync(product);
+
+            return RedirectToAction("Details", new { id = product.Id });
+        }
+
+
     }
 }
