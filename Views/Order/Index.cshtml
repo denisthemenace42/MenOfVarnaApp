@@ -1,5 +1,116 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using Men_Of_Varna.Models.Order
+@model OrderViewModel
+
+<h1>Shopping Cart</h1>
+
+@if (Model.Products.Count == 0)
+{
+    <div class="alert alert-warning">
+        Your cart is empty. <a asp-controller="Store" asp-action="Index">Continue Shopping</a>
+    </div>
 }
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr data-product-id="@product.Id">
+                    <td>@product.Name</td>
+                    <td>@product.Price.ToString("C")</td>
+                    <td>
+                        <input type="number"
+                               class="form-control quantity-input"
+                               data-product-id="@product.Id"
+                               min="1"
+                               max="@product.StockQuantity"
+                               value="@product.Quantity" />
+                    </td>
+                    <td class="total-price">@product.TotalPrice.ToString("C")</td>
+                    <td>
+                        <form asp-controller="Order" asp-action="RemoveFromCart" method="post">
+                            <input type="hidden" name="productId" value="@product.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <div class="text-right mt-3">
+        <h3>Total: <span id="cart-total">@Model.TotalAmount.ToString("C")</span></h3>
+        <a asp-controller="Store" asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Continue Shopping
+        </a>
+        <form asp-controller="Order" asp-action="Checkout" method="post" style="display:inline-block;">
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-shopping-cart"></i> Checkout
+            </button>
+        </form>
+    </div>
+}
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', function () {
+                    const productId = parseInt(this.getAttribute('data-product-id')); 
+                    const quantity = parseInt(this.value); 
+
+                    if (isNaN(productId) || productId <= 0) {
+                        alert("Invalid Product ID.");
+                        return;
+                    }
+
+                    if (isNaN(quantity) || quantity < 1) {
+                        alert("Quantity must be at least 1.");
+                        this.value = 1;
+                        return;
+                    }
+
+                    updateQuantity(productId, quantity);
+                });
+            });
+
+            function updateQuantity(productId, quantity) {
+                fetch('/Order/UpdateQuantity', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'  
+                    },
+                    body: JSON.stringify({
+                        productId: productId, 
+                        quantity: quantity 
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const row = document.querySelector(`tr[data-product-id='${productId}']`);
+                            const totalPriceCell = row.querySelector('.total-price');
+                            const cartTotal = document.getElementById('cart-total');
+                            totalPriceCell.textContent = data.updatedTotalPrice;
+                            cartTotal.textContent = data.totalCartAmount;
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        });
+    </script>
+}
+

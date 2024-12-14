@@ -53,6 +53,7 @@ namespace Men_Of_Varna.Services
         public async Task<Product?> GetByIdAsync(int id)
         {
             return await dbContext.Products
+                .AsNoTracking()
                 .Include(p => p.Comments)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
