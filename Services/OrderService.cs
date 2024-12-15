@@ -1,7 +1,9 @@
 ﻿using Men_Of_Varna.Contracts;
 using Men_Of_Varna.Data;
+using Men_Of_Varna.Data.Models;
 using Men_Of_Varna.Models.Order;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 namespace Men_Of_Varna.Services
 {
@@ -9,13 +11,15 @@ namespace Men_Of_Varna.Services
     {
         private readonly ApplicationDbContext dbContext;
         private readonly IProductService productService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         private const string CartSessionKey = "ShoppingCart";
 
-        public OrderService(ApplicationDbContext dbContext, IProductService productService)
+        public OrderService(ApplicationDbContext dbContext, IProductService productService, IHttpContextAccessor httpContextAccessor)
         {
             this.dbContext = dbContext;
             this.productService = productService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public OrderViewModel GetCartFromSession(ISession session)
@@ -117,6 +121,55 @@ namespace Men_Of_Varna.Services
           
             SaveCartToSession(session, cart);
         }
+
+        public async Task PlaceOrderAsync(Order order)
+        {
+            if (order.OrderProducts == null || !order.OrderProducts.Any())
+            {
+                throw new InvalidOperationException("Order must have at least one product.");
+            }
+
+            // Debugging to log the data before saving
+            Console.WriteLine("Placing order...");
+            Console.WriteLine($"Order has {order.OrderProducts.Count} products");
+
+            foreach (var orderProduct in order.OrderProducts)
+            {
+                var productFromDb = await dbContext.Products.FirstOrDefaultAsync(p => p.Id == orderProduct.ProductId);
+                if (productFromDb == null)
+                {
+                    throw new InvalidOperationException($"Product with ID {orderProduct.ProductId} does not exist.");
+                }
+
+                orderProduct.Product = productFromDb;
+                Console.WriteLine($"Product Linked: {orderProduct.Product.Name} - Quantity: {orderProduct.Quantity}");
+            }
+
+            await dbContext.Orders.AddAsync(order);
+            await dbContext.SaveChangesAsync();
+        }
+
+
+
+        public async Task<List<Order>> GetUserOrdersAsync(string userId)
+        {
+            return await dbContext.Orders
+                .Where(o => o.CustomerId == userId)
+                .Include(o => o.OrderProducts) // Include OrderProducts
+                .ThenInclude(op => op.Product) // Include Product details
+                .ToListAsync();
+        }
+
+
+        public async Task<Order?> GetOrderDetailsAsync(int orderId, string userId)
+        {
+            return await dbContext.Orders
+                .Where(o => o.Id == orderId && o.CustomerId == userId)
+                .Include(o => o.OrderProducts)
+                .ThenInclude(op => op.Product)
+                .FirstOrDefaultAsync();
+        }
+
 
 
     }

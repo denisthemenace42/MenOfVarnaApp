@@ -1,4 +1,5 @@
-﻿using Men_Of_Varna.Models.Order;
+﻿using Men_Of_Varna.Data.Models;
+using Men_Of_Varna.Models.Order;
 
 namespace Men_Of_Varna.Contracts
 {
@@ -10,8 +11,8 @@ namespace Men_Of_Varna.Contracts
         void RemoveFromCart(ISession session, int productId);
         Task CheckoutAsync(ISession session, string userId);
         void UpdateQuantity(ISession session, int productId, int quantity);
-
-
-
+        Task PlaceOrderAsync(Order order);
+        Task<Order?> GetOrderDetailsAsync(int orderId, string userId);
+        Task<List<Order>> GetUserOrdersAsync(string userId);
     }
 }

@@ -16,5 +16,7 @@ namespace Men_Of_Varna.Data.Models
         public int ProductId { get; set; }
         [ForeignKey(nameof(ProductId))]
         public Product Product { get; set; } = null!;
+
+        public int Quantity { get; set; }
     }
 }

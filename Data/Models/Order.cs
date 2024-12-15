@@ -33,6 +33,6 @@ namespace Men_Of_Varna.Data.Models
         [NotMapped]
         public decimal OrderTotal => Products.Sum(p => p.Price);
 
-        public ICollection<OrderProduct> OrderProducts { get; set; }
+        public List<OrderProduct> OrderProducts { get; set; } = new();
     }
 }
