@@ -38,35 +38,27 @@ namespace Men_Of_Varna.Data
                    .HasKey(ue => new { ue.UserId, ue.EventId });
 
             builder.Entity<OrderProduct>()
-    .HasKey(op => new { op.OrderId, op.ProductId });
+                   .HasKey(op => new { op.OrderId, op.ProductId });
 
             builder.Entity<OrderProduct>()
-    .HasOne(op => op.Order)  // A Product can have many Orders through OrderProduct
-    .WithMany(o => o.OrderProducts)  // Orders will have a collection of OrderProducts
-    .HasForeignKey(op => op.OrderId);
+                   .HasOne(op => op.Order)  
+                   .WithMany(o => o.OrderProducts)  
+                   .HasForeignKey(op => op.OrderId);
 
             builder.Entity<OrderProduct>()
-    .HasOne(op => op.Product)  // A Product can have many Orders through OrderProduct
-    .WithMany(p => p.OrderProducts)  // Products will have a collection of OrderProducts
-    .HasForeignKey(op => op.ProductId);
+                   .HasOne(op => op.Product)  
+                   .WithMany(p => p.OrderProducts)  
+                   .HasForeignKey(op => op.ProductId);
 
             builder.Entity<UserEvent>()
-                .HasOne(ue => ue.User)
-                .WithMany() 
-                .HasForeignKey(ue => ue.UserId);
+                   .HasOne(ue => ue.User)
+                   .WithMany() 
+                   .HasForeignKey(ue => ue.UserId);
 
             builder.Entity<UserEvent>()
-                .HasOne(ue => ue.Event)
-                .WithMany(e => e.UserEvents) 
-                .HasForeignKey(ue => ue.EventId);
-
-
-            builder.Entity<OrderProduct>().HasData(
-    new OrderProduct { OrderId = 1, ProductId = 1 },
-    new OrderProduct { OrderId = 1, ProductId = 2 },
-    new OrderProduct { OrderId = 2, ProductId = 1 }
-);
-
+                  .HasOne(ue => ue.Event)
+                  .WithMany(e => e.UserEvents) 
+                  .HasForeignKey(ue => ue.EventId);
 
             builder.Entity<Event>().HasData(
                 new Event
@@ -76,7 +68,7 @@ namespace Men_Of_Varna.Data
                     Description = "Join us to clean up the beautiful beaches of Varna.",
                     PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
                     PublishedOn = new DateTime(2024, 1, 5),
-                    CreatedBy = "Men of Varna Admin",
+                    CreatedBy = "admin@menofvarna.com",
                     IsUpcoming = false
                 },
                 new Event
@@ -86,7 +78,7 @@ namespace Men_Of_Varna.Data
                     Description = "An adventurous hike through the scenic mountains.",
                     PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
                     PublishedOn = new DateTime(2024, 12, 12),
-                    CreatedBy = "Denis Mehmed",
+                    CreatedBy = "admin@menofvarna.com",
                     IsUpcoming = true
                 },
                 new Event
@@ -96,7 +88,7 @@ namespace Men_Of_Varna.Data
                     Description = "Relax and rejuvenate with a free yoga session for all.",
                     PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
                     PublishedOn = new DateTime(2024, 3, 8),
-                    CreatedBy = "Denis Mehmed",
+                    CreatedBy = "admin@menofvarna.com",
                     IsUpcoming = false
                 },
                 new Event
@@ -106,7 +98,7 @@ namespace Men_Of_Varna.Data
                     Description = "Discussing 'The Way of the Superior Man' by David Deida.",
                     PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
                     PublishedOn = new DateTime(2024, 4, 1),
-                    CreatedBy = "Men of Varna Admin",
+                    CreatedBy = "admin@menofvarna.com",
                     IsUpcoming = false
                 });
 
@@ -146,48 +138,6 @@ namespace Men_Of_Varna.Data
                     IsActive = true
                 }
             );
-
-            builder.Entity<Feedback>().HasData(
-        new Feedback
-        {
-            Id = 1,
-            UserId = "7699db7d-964f-4782-8209-d76562e0fece", 
-            Content = "This is an amazing product! I love the motivational quote and the comfort of the T-shirt.",
-            SubmittedOn = DateTime.UtcNow,
-           
-        },
-        new Feedback
-        {
-            Id = 2,
-            UserId = "7699db7d-964f-4782-8209-d76562e0fece", 
-            Content = "The canvas painting is beautiful! It adds a great vibe to my living room.",
-            SubmittedOn = DateTime.UtcNow,
-           
-        }
-    );
-            builder.Entity<Order>().HasData(
-        new Order
-        {
-            Id = 1,
-            OrderDate = DateTime.UtcNow,
-            CustomerId = "7699db7d-964f-4782-8209-d76562e0fece", 
-            ShippingAddress = "123 Main St",
-            ShippingCity = "Varna",
-            ShippingZip = "9000",
-            OrderStatus = "Pending"
-        },
-        new Order
-        {
-            Id = 2,
-            OrderDate = DateTime.UtcNow.AddDays(-1),
-            CustomerId = "7699db7d-964f-4782-8209-d76562e0fece", 
-            ShippingAddress = "456 Secondary St",
-            ShippingCity = "Varna",
-            ShippingZip = "9001",
-            OrderStatus = "Shipped"
-        }
-    );
-
 
         }
         

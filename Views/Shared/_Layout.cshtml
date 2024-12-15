@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Men Of Varna</title>
+    <title>@ViewData["Title"] Men Of Varna</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Horizons.styles.css" asp-append-version="true" />
@@ -15,14 +15,14 @@
             <div class="container-fluid">
                 @if (User?.Identity?.IsAuthenticated ?? false)
                 {
-                    <a class="navbar-brand" asp-controller="Event" asp-action="Index">
+                    <a class="navbar-brand" asp-area="" asp-controller="Event" asp-action="Index">
                         <i class="fas fa-anchor"></i> Men Of Varna
                         <span class="visually-hidden">(current)</span>
                     </a>
                 }
                 else
                 {
-                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                         <i class="fas fa-shield-alt"></i> Men Of Varna
                         <span class="visually-hidden">(current)</span>
                     </a>
@@ -36,19 +36,38 @@
                         <li class="nav-item">
                             @if (User?.Identity?.IsAuthenticated ?? false)
                             {
-                                <a class="nav-link active" asp-controller="Event" asp-action="Index">
+                                <a class="nav-link active" asp-area="" asp-controller="Event" asp-action="Index">
                                     <i class="fas fa-home"></i> Home
                                     <span class="visually-hidden">(current)</span>
                                 </a>
                             <li class="nav-item">
-                                <a class="nav-link active" asp-controller="Event" asp-action="Index">
+                                <a class="nav-link active" asp-area="" asp-controller="Event" asp-action="Index">
                                     <i class="fa fa-map-marker"></i> Events
                                     <span class="visually-hidden">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" asp-controller="Feedback" asp-action="Index">
+                                <a class="nav-link active" asp-area="" asp-controller="Feedback" asp-action="Index">
                                     <i class="fas fa-envelope"></i> Feedback
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Store" asp-action="Index">
+                                    <i class="fa-solid fa-store"></i> Store
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            }
+                            else
+                            {
+                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <i class="fas fa-home"></i> Home
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Event" asp-action="Index">
+                                    <i class="fa fa-map-marker"></i> Events
                                     <span class="visually-hidden">(current)</span>
                                 </a>
                             </li>
@@ -58,26 +77,13 @@
                                     <span class="visually-hidden">(current)</span>
                                 </a>
                             </li>
-                            }
-                            else
-                            {
-                                <a class="nav-link active" asp-controller="Home" asp-action="Index">
-                                    <i class="fas fa-home"></i> Home
-                                    <span class="visually-hidden">(current)</span>
-                                </a>
-                            <li class="nav-item">
-                                <a class="nav-link active" asp-controller="Event" asp-action="Index">
-                                    <i class="fa fa-map-marker"></i> Events
-                                    <span class="visually-hidden">(current)</span>
-                                </a>
-                            </li>
                                 
                             }
                         </li>
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Event" asp-action="MyEvents">
+                                <a class="nav-link" asp-area="" asp-controller="Event" asp-action="MyEvents">
                                     <i class="fas fa-heart"></i> My Events
                                 </a>
                             </li>
@@ -86,11 +92,15 @@
                     </ul>
                     @if (User?.Identity?.IsAuthenticated ?? false)
                     {
-                       
-                        <a class="nav-link" asp-controller="Order" asp-action="Index">
+                        <a class="nav-link d-inline-block" asp-area="" asp-controller="Order" asp-action="Index">
                             <i class="fas fa-shopping-cart"></i> My Cart
                         </a>
+
+                        <a class="nav-link d-inline-block ms-3" asp-area="" asp-controller="Order" asp-action="History">
+                            <i class="fas fa-box"></i> My Orders
+                        </a>
                     }
+
                     <partial name="_LoginPartial" />
                 </div>
             </div>

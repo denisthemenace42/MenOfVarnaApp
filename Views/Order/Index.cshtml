@@ -5,10 +5,20 @@
 
 @if (Model.Products.Count == 0)
 {
-    <div class="alert alert-warning">
-        Your cart is empty. <a asp-controller="Store" asp-action="Index">Continue Shopping</a>
+    <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+        <div class="text-center">
+            <img src="~/images/empty-cart.png" alt="Empty Cart" style="width: 150px; height: 150px; object-fit: contain;" />
+
+            <h3 class="mt-4 text-secondary">Your cart is empty</h3>
+            <p class="text-muted">Looks like you haven't added any products to your cart yet.</p>
+
+            <a asp-controller="Store" asp-action="Index" class="btn btn-primary mt-3">
+                <i class="fas fa-shopping-bag"></i> Continue Shopping
+            </a>
+        </div>
     </div>
 }
+
 else
 {
     <table class="table table-bordered">

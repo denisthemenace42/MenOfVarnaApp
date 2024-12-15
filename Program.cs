@@ -3,6 +3,7 @@ using Men_Of_Varna.Services;
 using Men_Of_Varna.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Men_Of_Varna.Common;
 
 namespace Men_Of_Varna
 {
@@ -17,15 +18,19 @@ namespace Men_Of_Varna
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
             })
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultUI()
+            .AddDefaultTokenProviders();
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages(); 
 
             builder.Services.Configure<IdentityOptions>(options =>
             {
@@ -35,26 +40,43 @@ namespace Men_Of_Varna
                 options.Password.RequireUppercase = false;
             });
 
-            // Register services for DI
             builder.Services.AddScoped<IEventService, EventService>();
             builder.Services.AddScoped<IFeedbackService, FeedbackService>();
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
 
-            // Add Distributed Memory Cache to store session data
             builder.Services.AddDistributedMemoryCache();
 
-            // Add session services and configure session options
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(30); // Session timeout after 30 minutes of inactivity
-                options.Cookie.HttpOnly = true; // Restrict session cookie access to HTTP requests only
-                options.Cookie.IsEssential = true; // Required for GDPR compliance
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
             });
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                DatabaseSeeder.SeedRoles(services);
+                DatabaseSeeder.AssignAdminRole(services);
+            }
+
+            app.Use(async (context, next) =>
+            {
+                if (context.User.Identity?.IsAuthenticated == true &&
+                    context.Request.Path == "/" &&
+                    context.User.IsInRole("Admin"))
+                {
+                    context.Response.Redirect("/Admin/Home/Index");
+                }
+                else
+                {
+                    await next();
+                }
+            });
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -62,15 +84,13 @@ namespace Men_Of_Varna
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            // Order of middleware matters here
-            app.UseSession(); // Enables session before routing and authorization
+            app.UseSession();
 
             app.UseRouting();
 
@@ -78,10 +98,14 @@ namespace Men_Of_Varna
             app.UseAuthorization();
 
             app.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+            app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.MapRazorPages();
+            app.MapRazorPages(); // Ensure this is last!
 
             app.Run();
         }

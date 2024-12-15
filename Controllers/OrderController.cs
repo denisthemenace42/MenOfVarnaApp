@@ -89,17 +89,16 @@ namespace Men_Of_Varna.Controllers
                 totalCartAmount = totalCartAmount
             });
         }
-
-        [HttpPost]
+        [HttpGet]
         public IActionResult Checkout()
         {
             var cart = orderService.GetCartFromSession(HttpContext.Session);
 
-            // If the cart is empty, redirect to store
-            if (cart.Products == null || cart.Products.Count == 0)
+            // If the cart is empty, redirect to the order index page
+            if (cart == null || cart.Products == null || !cart.Products.Any())
             {
                 TempData["ErrorMessage"] = "Your cart is empty.";
-                return RedirectToAction("Index", "Store");
+                return RedirectToAction("Index", "Order");
             }
 
             var model = new OrderViewModel
@@ -108,6 +107,58 @@ namespace Men_Of_Varna.Controllers
             };
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Checkout(OrderViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("ModelState is invalid. Reloading cart data...");
+
+                // 🟢 Reload the cart from the session and update the model
+                var cart = orderService.GetCartFromSession(HttpContext.Session);
+
+                var updatedModel = new OrderViewModel
+                {
+                    Products = cart.Products, // 🟢 Populate Products for Order Summary
+                    ShippingAddress = model.ShippingAddress,
+                    ShippingCity = model.ShippingCity,
+                    ShippingZip = model.ShippingZip
+                };
+
+                return View(updatedModel); // 🟢 Return the view with the updated model
+            }
+
+            var cartFromSession = orderService.GetCartFromSession(HttpContext.Session);
+            if (cartFromSession == null || cartFromSession.Products == null || !cartFromSession.Products.Any())
+            {
+                TempData["ErrorMessage"] = "Your cart is empty.";
+                return RedirectToAction("Index", "Order");
+            }
+
+            var customerId = HttpContext.User?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            var order = new Order
+            {
+                CustomerId = customerId,
+                ShippingAddress = model.ShippingAddress,
+                ShippingCity = model.ShippingCity,
+                ShippingZip = model.ShippingZip,
+                OrderStatus = "Pending",
+                OrderDate = DateTime.UtcNow,
+                OrderProducts = cartFromSession.Products.Select(p => new OrderProduct
+                {
+                    ProductId = p.Id,
+                    Quantity = p.Quantity
+                }).ToList()
+            };
+
+            await orderService.PlaceOrderAsync(order);
+            HttpContext.Session.Remove("ShoppingCart");
+
+            TempData["SuccessMessage"] = "Your order has been placed successfully!";
+            return RedirectToAction("History", "Order");
         }
 
         [HttpPost]

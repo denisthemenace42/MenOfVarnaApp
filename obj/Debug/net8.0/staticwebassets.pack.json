@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\images\\default-image.jpg"
     },
     {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\images\\empty-cart.png",
+      "PackagePath": "staticwebassets\\images\\empty-cart.png"
+    },
+    {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\images\\no-orders.png",
+      "PackagePath": "staticwebassets\\images\\no-orders.png"
+    },
+    {
       "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\js\\footer-qoutes.js",
       "PackagePath": "staticwebassets\\js\\footer-qoutes.js"
     },
