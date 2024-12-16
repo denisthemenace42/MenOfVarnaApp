@@ -1,4 +1,4 @@
-﻿namespace Men_Of_Varna.Models
+﻿namespace Men_Of_Varna.Models.Events
 {
     public class PaginatedList<T>
     {

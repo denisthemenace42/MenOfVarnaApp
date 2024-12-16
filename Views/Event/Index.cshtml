@@ -1,4 +1,5 @@
-﻿@using Men_Of_Varna.Models
+﻿@using Azure.Core
+@using Men_Of_Varna.Models.Events
 @model PaginatedList<Men_Of_Varna.Models.Events.EventViewModel>
 
 <div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
@@ -10,6 +11,25 @@
         </a>
     }
 </div>
+
+<!-- 🟢 Filter and Search Controls -->
+<form id="filterForm" method="get" class="row mb-4">
+    <!-- Search Box -->
+    <div class="col-md-8">
+        <input type="text" class="form-control" id="searchQuery" name="searchQuery"
+               value="@ViewContext.HttpContext.Request.Query["searchQuery"].ToString()" placeholder="Search events..." />
+    </div>
+
+    <!-- Upcoming Events Checkbox -->
+    <div class="col-md-4 d-flex align-items-center">
+        <form method="get" id="filterForm">
+            <input type="checkbox" class="form-check-input me-2" id="showUpcoming" name="showUpcoming" value="true"
+            @(ViewContext.HttpContext.Request.Query["showUpcoming"].ToString() == "true" ? "checked" : "") />
+            <label for="showUpcoming">Show Only Upcoming Events</label>
+        </form>
+    </div>
+</form>
+
 <hr />
 
 <div class="row text-center">
@@ -31,9 +51,19 @@
                     <p class="card-text">@eventItem.Description</p>
                     <p class="card-text"><small>Published on: @eventItem.PublishedOn.ToString("dd/MM/yyyy")</small></p>
                     <div class="d-flex justify-content-between mt-auto">
-                        <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info w-100">
-                            <i class="fas fa-info-circle"></i> Details
-                        </a>
+                        
+                            <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info w-100">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                        @if (User.Identity.IsAuthenticated && !eventItem.IsAttending && eventItem.IsUpcoming)
+                        {
+                            <form asp-controller="Event" asp-action="Attend" method="post" class="w-100">
+                                <input type="hidden" name="id" value="@eventItem.Id" />
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fas fa-check"></i> Attend
+                                </button>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>
@@ -70,3 +100,30 @@
         }
     </ul>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterForm = document.getElementById('filterForm');
+        const searchQueryInput = document.getElementById('searchQuery');
+        const showUpcomingCheckbox = document.getElementById('showUpcoming');
+
+        // Debounce function to limit how often the search triggers
+        let debounceTimeout;
+        const debounce = (func, delay) => {
+            return function () {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(func, delay);
+            };
+        };
+
+        // Update on search input
+        searchQueryInput.addEventListener('input', debounce(() => {
+            filterForm.submit();
+        }, 500)); // 500ms delay to prevent excessive requests
+
+        // Update on checkbox change
+        showUpcomingCheckbox.addEventListener('change', function () {
+            document.getElementById('filterForm').submit();
+        });
+    });
+</script>

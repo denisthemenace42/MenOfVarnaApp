@@ -1,5 +1,6 @@
 ﻿using Men_Of_Varna.Contracts;
 using Men_Of_Varna.Data.Models;
+using Men_Of_Varna.Models.Events;
 using Men_Of_Varna.Models.Store;
 using Men_Of_Varna.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -19,19 +20,34 @@ namespace Men_Of_Varna.Controllers
             this.userManager = userManager;
 
         }
+
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
-{
-    var products = await productService.GetAllActiveProductsAsync();
-    var orderedProducts = products.OrderByDescending(p => p.Name).ToList();
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 8)
+        {
+            var products = await productService.GetAllActiveProductsAsync();
+            var totalProducts = products.Count();
 
-    var viewModel = new StoreViewModel
-    {
-        Products = orderedProducts
-    };
+            // Pagination logic
+            var paginatedProducts = products
+                .OrderByDescending(p => p.Name)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
 
-    return View(viewModel);
-}
+            var viewModel = new StoreViewModel
+            {
+                Products = paginatedProducts,
+                CurrentPage = pageNumber,
+                TotalPages = (int)Math.Ceiling(totalProducts / (double)pageSize),
+                ItemsPerPage = pageSize
+            };
+
+            return View(viewModel);
+        }
+
+
+
+
         [HttpGet]
         public IActionResult Add()
         {
@@ -73,7 +89,7 @@ namespace Men_Of_Varna.Controllers
                 StockQuantity = product.StockQuantity,
                 Category = product.Category,
                 IsActive = product.IsActive,
-                Comments = product.Comments.Select(c => new CommentViewModel
+                Comments = product.Comments.Select(c => new Models.Store.CommentViewModel
                 {
                     Author = c.Author,
                     CreatedAt = c.CreatedAt,

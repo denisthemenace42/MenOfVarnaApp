@@ -1,14 +1,15 @@
 ﻿namespace Men_Of_Varna.Models.Store
 {
-    
     public class StoreViewModel
     {
         public IEnumerable<ProductViewModel> Products { get; set; } = Enumerable.Empty<ProductViewModel>();
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public int ItemsPerPage { get; set; } = 8; 
 
-
-        // Additional properties like filtering or pagination can go here.
+        public bool HasPreviousPage => CurrentPage > 1;
+        public bool HasNextPage => CurrentPage < TotalPages;
     }
-
 
     public class ProductViewModel
     {
@@ -21,7 +22,4 @@
         public int StockQuantity { get; set; }
         public bool IsActive { get; set; }
     }
-
-
-
 }

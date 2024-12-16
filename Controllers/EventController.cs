@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 using System.Security.Claims;
 
 namespace Men_Of_Varna.Controllers
@@ -26,21 +27,36 @@ namespace Men_Of_Varna.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 8) // 🟢 Default 8 items per page
+        public async Task<IActionResult> Index([FromQuery] string searchQuery = "", [FromQuery] bool? showUpcoming = null, int pageNumber = 1, int pageSize = 8)
         {
+            // If showUpcoming is null, it means the checkbox was not checked
+            bool isUpcoming = showUpcoming ?? false;
+
             var userId = userManager.GetUserId(User);
 
             // 1️⃣ Get total number of events
             var totalEvents = await eventService.GetAllEventsAsync(userId);
-            var orderedEvents = totalEvents.OrderByDescending(e => e.PublishedOn).ToList();
 
-            // 2️⃣ Paginate the list using Skip and Take
+            // 2️⃣ Apply search filter (case-insensitive)
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                totalEvents = totalEvents.Where(e => e.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            // 3️⃣ Apply "Upcoming Events" filter
+            if (isUpcoming)
+            {
+                totalEvents = totalEvents.Where(e => e.IsUpcoming == true).ToList();
+            }
+
+            // 4️⃣ Order and paginate the list
+            var orderedEvents = totalEvents.OrderByDescending(e => e.PublishedOn).ToList();
             var paginatedEvents = orderedEvents
-                .Skip((pageNumber - 1) * pageSize) // 🟢 Skip events for previous pages
-                .Take(pageSize) // 🟢 Take only the events for the current page
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToList();
 
-            // 3️⃣ Create the PaginatedList ViewModel
+            // 5️⃣ Create the PaginatedList ViewModel
             var viewModel = new PaginatedList<EventViewModel>
             {
                 Items = paginatedEvents.Select(e => new EventViewModel
@@ -50,15 +66,17 @@ namespace Men_Of_Varna.Controllers
                     Description = e.Description,
                     ImageUrl = e.ImageUrl,
                     PublishedOn = e.PublishedOn,
-                    IsUpcoming = e.IsUpcoming
+                    IsUpcoming = e.IsUpcoming,
+                    IsAttending = e.IsAttending
                 }).ToList(),
                 PageNumber = pageNumber,
                 PageSize = pageSize,
-                TotalItems = orderedEvents.Count // 🟢 Total items before pagination
+                TotalItems = orderedEvents.Count
             };
 
             return View(viewModel);
         }
+
 
         [HttpGet]
         public IActionResult Add()
