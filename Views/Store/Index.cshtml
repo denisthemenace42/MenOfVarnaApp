@@ -1,10 +1,6 @@
 ﻿@using Men_Of_Varna.Models.Store
 @model StoreViewModel
 
-@{
-    ViewData["Title"] = "All Products";
-}
-
 <div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
     <h2>@ViewData["Title"]</h2>
     @if (User?.IsInRole("Admin") ?? false)
@@ -14,13 +10,77 @@
         </a>
     }
 </div>
+
+<!-- Filter Form -->
+<form method="get" id="filterForm" class="row mb-4">
+    <!-- Search Box -->
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="searchQuery" name="searchQuery" 
+               value="@ViewContext.HttpContext.Request.Query["searchQuery"]" 
+               placeholder="Search by name or description" />
+    </div>
+
+    <!-- Category Dropdown -->
+    <div class="col-md-3">
+        <select class="form-select" id="category" name="category">
+            <option value="">All Categories</option>
+            @if (ViewContext.HttpContext.Request.Query["category"].ToString() == "Art")
+            {
+                <option value="Art" selected="selected">Art</option>
+            }
+            else
+            {
+                <option value="Art">Art</option>
+            }
+
+            @if (ViewContext.HttpContext.Request.Query["category"].ToString() == "Clothes")
+            {
+                <option value="Clothes" selected="selected">Clothes</option>
+            }
+            else
+            {
+                <option value="Clothes">Clothes</option>
+            }
+
+            @if (ViewContext.HttpContext.Request.Query["category"].ToString() == "Books")
+            {
+                <option value="Books" selected="selected">Books</option>
+            }
+            else
+            {
+                <option value="Books">Books</option>
+            }
+
+        </select>
+    </div>
+
+    <!-- Price Range Inputs -->
+    <div class="col-md-2">
+        <input type="number" class="form-control" id="minPrice" name="minPrice" 
+               value="@ViewContext.HttpContext.Request.Query["minPrice"]" 
+               placeholder="Min Price" />
+    </div>
+
+    <div class="col-md-2">
+        <input type="number" class="form-control" id="maxPrice" name="maxPrice" 
+               value="@ViewContext.HttpContext.Request.Query["maxPrice"]" 
+               placeholder="Max Price" />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-md-2 d-flex align-items-center">
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
 <hr />
 
-<div class="row text-center">
+<!-- 🟢 Start Row for Products -->
+<div class="row">
     @foreach (var product in Model.Products)
     {
         <div class="col-md-3 mb-4">
-            <div class="card h-100" style="width: 100%;">
+            <div class="card h-100">
                 @if (!string.IsNullOrEmpty(product.PictureUrl))
                 {
                     <img src="@product.PictureUrl" class="card-img-top" style="max-height: 150px; object-fit: contain;" alt="@product.Name">
@@ -60,6 +120,7 @@
         </div>
     }
 </div>
+<!-- 🔴 Close Row for Products -->
 
 <!-- Pagination controls -->
 <nav aria-label="Page navigation">

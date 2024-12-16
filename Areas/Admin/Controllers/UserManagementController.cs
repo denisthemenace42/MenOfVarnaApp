@@ -28,7 +28,7 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
 				var roles = await userManager.GetRolesAsync(user);
 				userViewModel.Add(new UserViewModel
 				{
-					Id = Guid.Parse(user.Id),
+					Id = user.Id,
 					Email = user.Email,
 					Roles = roles.ToList(),
 				});

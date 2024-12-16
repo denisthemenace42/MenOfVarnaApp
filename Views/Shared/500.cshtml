@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Server Error";
+}
+
+<div class="container d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+
+    <img src="https://cdn4.iconfinder.com/data/icons/application-windows-3/32/Internal-Server-Error-512.png"
+         alt="500 Internal Server Error"
+         class="img-fluid mb-4 animate__animated animate__fadeInDown"
+         style="max-width: 400px; border-radius: 10px;">
+
+    <h1 class="display-3 fw-bold text-danger animate__animated animate__fadeInUp">
+        500 - Internal Server Error
+    </h1>
+
+    <p class="fs-5 text-muted">
+        Sorry, something went wrong on our end. <br>
+        Please try again later or contact support if the issue persists.
+    </p>
+
+    <a asp-area="" asp-controller="Home" asp-action="Index"
+       class="btn btn-primary btn-lg mt-4 animate__animated animate__bounceIn">
+        <i class="fas fa-home"></i> Return to Home
+    </a>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa; 
+    }
+
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 2px;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .btn-primary {
+        padding: 0.75rem 1.25rem;
+        font-size: 1.25rem;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3 !important;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />

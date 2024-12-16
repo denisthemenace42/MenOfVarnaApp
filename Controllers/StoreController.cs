@@ -22,18 +22,43 @@ namespace Men_Of_Varna.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 8)
+        public async Task<IActionResult> Index([FromQuery] string searchQuery = "", [FromQuery] string category = "", [FromQuery] decimal minPrice = 0, [FromQuery] decimal maxPrice = 0, int pageNumber = 1, int pageSize = 8)
         {
+            // 1️⃣ Get all products
             var products = await productService.GetAllActiveProductsAsync();
-            var totalProducts = products.Count();
 
-            // Pagination logic
+            // 2️⃣ Apply search filter (name or description)
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                products = products.Where(p => p.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)
+                                             || p.Description.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            // 3️⃣ Filter by category
+            if (!string.IsNullOrEmpty(category))
+            {
+                products = products.Where(p => p.Category.Equals(category, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            // 4️⃣ Filter by price range
+            if (minPrice > 0)
+            {
+                products = products.Where(p => p.Price >= minPrice).ToList();
+            }
+            if (maxPrice > 0)
+            {
+                products = products.Where(p => p.Price <= maxPrice).ToList();
+            }
+
+            // 5️⃣ Pagination logic
+            var totalProducts = products.Count();
             var paginatedProducts = products
                 .OrderByDescending(p => p.Name)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
+            // 6️⃣ Create the view model
             var viewModel = new StoreViewModel
             {
                 Products = paginatedProducts,
@@ -44,6 +69,7 @@ namespace Men_Of_Varna.Controllers
 
             return View(viewModel);
         }
+
 
 
 

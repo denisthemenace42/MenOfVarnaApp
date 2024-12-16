@@ -103,7 +103,7 @@ namespace Men_Of_Varna.Migrations
                             Description = "Join us to clean up the beautiful beaches of Varna.",
                             IsUpcoming = false,
                             Name = "Beach Cleanup",
-                            PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
+                            PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg",
                             PublishedOn = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -112,7 +112,7 @@ namespace Men_Of_Varna.Migrations
                             CreatedBy = "admin@menofvarna.com",
                             Description = "An adventurous hike through the scenic mountains.",
                             IsUpcoming = true,
-                            Name = "Mountain Hike",
+                            Name = "Mountain Hike Adventure",
                             PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
                             PublishedOn = new DateTime(2024, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -122,7 +122,7 @@ namespace Men_Of_Varna.Migrations
                             CreatedBy = "admin@menofvarna.com",
                             Description = "Relax and rejuvenate with a free yoga session for all.",
                             IsUpcoming = false,
-                            Name = "Community Yoga",
+                            Name = "Community Yoga Session",
                             PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
                             PublishedOn = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -132,89 +132,119 @@ namespace Men_Of_Varna.Migrations
                             CreatedBy = "admin@menofvarna.com",
                             Description = "Discussing 'The Way of the Superior Man' by David Deida.",
                             IsUpcoming = false,
-                            Name = "Book Club Meeting",
-                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
+                            Name = "Book Club: The Way of the Superior Man",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4eQ8mWoCR27QphNLMQOXl11DjLmpPN3sA-Q&s",
                             PublishedOn = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "admin@menofvarna.com",
+                            Description = "Boost your resilience with cold exposure training in the open sea.",
+                            IsUpcoming = true,
+                            Name = "Cold Exposure Training",
+                            PictureUrl = "https://images.squarespace-cdn.com/content/v1/5e08057bcf041b5662c92ed6/02f7390a-bf32-4357-8676-97974d4b55e2/004b4a82-4286-46f0-bf88-7bd006428699.JPG",
+                            PublishedOn = new DateTime(2024, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "Join us to clean up the beautiful beaches of Varna.",
-                            IsUpcoming = false,
-                            Name = "Beach Cleanup",
-                            PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
-                            PublishedOn = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Description = "Start your day with a calming sunrise meditation by the beach.",
+                            IsUpcoming = true,
+                            Name = "Sunrise Meditation",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9iUsU5VgGYMUGq56kn9o2RFZqsUmhdgg9LQ&s",
+                            PublishedOn = new DateTime(2024, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "An adventurous hike through the scenic mountains.",
+                            Description = "Compete in a fun and challenging obstacle course with friends.",
                             IsUpcoming = true,
-                            Name = "Mountain Hike",
-                            PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
-                            PublishedOn = new DateTime(2024, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Name = "Obstacle Course Challenge",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8T4C_FOiufpKQlyBWZyJDdJT_6x2Yj1TOjg&s",
+                            PublishedOn = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "Relax and rejuvenate with a free yoga session for all.",
-                            IsUpcoming = false,
-                            Name = "Community Yoga",
-                            PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
-                            PublishedOn = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Description = "Explore the trails at night with only a headlamp to guide you.",
+                            IsUpcoming = true,
+                            Name = "Night Hike Adventure",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6oZeeEU4XGDbzASDq0PdKevZpF44d7cFULg&s",
+                            PublishedOn = new DateTime(2024, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "Discussing 'The Way of the Superior Man' by David Deida.",
-                            IsUpcoming = false,
-                            Name = "Book Club Meeting",
-                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
-                            PublishedOn = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Description = "Discover the power of breathwork and experience a rejuvenating ice bath.",
+                            IsUpcoming = true,
+                            Name = "Breathwork & Ice Bath",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAP-T1HItPZ2uLketuhnetCmcTcEP-pqIChA&s",
+                            PublishedOn = new DateTime(2024, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "Join us to clean up the beautiful beaches of Varna.",
+                            Description = "Join us for a strength training bootcamp led by top trainers.",
                             IsUpcoming = false,
-                            Name = "Beach Cleanup",
-                            PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
-                            PublishedOn = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Name = "Strength Training Bootcamp",
+                            PictureUrl = "https://tunturi.org/Blogs/2021-08/bootcamp-full-body-workout.jpg",
+                            PublishedOn = new DateTime(2024, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "An adventurous hike through the scenic mountains.",
-                            IsUpcoming = true,
-                            Name = "Mountain Hike",
-                            PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
-                            PublishedOn = new DateTime(2024, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Description = "Run together through scenic trails and meet other trail enthusiasts.",
+                            IsUpcoming = false,
+                            Name = "Trail Running Meetup",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHw1Uz7ZT_SGawOAqvTW8Woa023zkVxTrXaw&s",
+                            PublishedOn = new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "Relax and rejuvenate with a free yoga session for all.",
-                            IsUpcoming = false,
-                            Name = "Community Yoga",
-                            PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
-                            PublishedOn = new DateTime(2024, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Description = "Enhance your focus and mental clarity with this guided meditation.",
+                            IsUpcoming = true,
+                            Name = "Guided Meditation for Focus",
+                            PictureUrl = "https://cdn.prod.website-files.com/639ba154cb866a1c9aba97cd/63b4414fac8f1cb8e7b617b6_How%20to%20lead%20a%20guided%20meditation%20(1).jpg",
+                            PublishedOn = new DateTime(2024, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
                             CreatedBy = "admin@menofvarna.com",
-                            Description = "Discussing 'The Way of the Superior Man' by David Deida.",
+                            Description = "Learn the essentials of powerlifting in this hands-on workshop.",
+                            IsUpcoming = true,
+                            Name = "Powerlifting Workshop",
+                            PictureUrl = "https://images.squarespace-cdn.com/content/v1/614d2cd0f5f2ae630442f65e/1634702587473-6AYH847J99WQQE2FWBCO/socials-06517.jpg",
+                            PublishedOn = new DateTime(2024, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedBy = "admin@menofvarna.com",
+                            Description = "High-Intensity Interval Training to get your heart pumping.",
                             IsUpcoming = false,
-                            Name = "Book Club Meeting",
-                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
-                            PublishedOn = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Name = "HIIT Workout Blitz",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwa9Vpc1nkZ315vuX_S-Dhlp393Oe5kYWz9g&s",
+                            PublishedOn = new DateTime(2024, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedBy = "admin@menofvarna.com",
+                            Description = "End the day with a full-body workout as the sun sets on the beach.",
+                            IsUpcoming = true,
+                            Name = "Sunset Beach Workout",
+                            PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRgutcIfWcLdyTW0V0bxFfkccYoZo5eg7Mdw&s",
+                            PublishedOn = new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -347,9 +377,9 @@ namespace Men_Of_Varna.Migrations
                         {
                             Id = 1,
                             Category = "Clothes",
-                            Description = "Elevate your style and mindset with this premium 100% cotton T-shirt featuring an inspiring motivational quote. Crafted for comfort and durability, this soft, breathable tee is perfect for daily wear, whether you're hitting the gym, running errands, or just lounging. The classic fit and bold design make it a standout piece in any wardrobe. Stay motivated, confident, and stylish with this high-quality T-shirt, designed to empower you every day. Ideal for those who believe in the power of positive thinking and self-motivation.",
+                            Description = "Elevate your style and mindset with this premium 100% cotton T-shirt featuring an inspiring motivational quote. Crafted for comfort and durability, this soft, breathable tee is perfect for daily wear, whether you're hitting the gym, running errands, or just lounging. The classic fit and bold design make it a standout piece in any wardrobe.",
                             IsActive = true,
-                            Name = "T-Shirt",
+                            Name = "Motivational T-Shirt",
                             PictureUrl = "https://i.etsystatic.com/12381665/r/il/4e7f53/4106896277/il_570xN.4106896277_o801.jpg",
                             Price = 25.99m,
                             StockQuantity = 100
@@ -357,24 +387,112 @@ namespace Men_Of_Varna.Migrations
                         new
                         {
                             Id = 2,
-                            Category = "Art",
-                            Description = "Transform your space with this stunning canvas painting featuring a powerful motivational quote. Crafted with high-quality materials, this artwork adds both elegance and inspiration to any room. Whether displayed in your office, living room, or home gym, it serves as a constant reminder to stay focused, driven, and positive. With its timeless design and vibrant colors, this canvas painting is not only an affordable way to enhance your décor but also a daily source of motivation. Perfect for anyone looking to elevate their environment and mindset.",
+                            Category = "Clothes",
+                            Description = "Stay warm, comfortable, and stylish with our premium hoodie. Made from high-quality fleece, this hoodie offers warmth and durability. It features a motivational quote on the back to inspire you every day. The perfect choice for workouts, casual wear, or lounging at home.",
                             IsActive = true,
-                            Name = "Canvas Painting",
+                            Name = "Premium Hoodie",
+                            PictureUrl = "https://i.etsystatic.com/13717122/r/il/59140b/2175825962/il_570xN.2175825962_8vhu.jpg",
+                            Price = 45.99m,
+                            StockQuantity = 50
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "Clothes",
+                            Description = "Run, walk, or lounge in style with these lightweight, breathable joggers. Designed with a perfect balance of comfort and performance, they are ideal for workouts, morning jogs, or a day of relaxation. Features deep side pockets and a sleek, modern design.",
+                            IsActive = true,
+                            Name = "Performance Joggers",
+                            PictureUrl = "https://i.etsystatic.com/18951319/r/il/0b2cb8/1944940075/il_570xN.1944940075_rqjl.jpg",
+                            Price = 39.99m,
+                            StockQuantity = 70
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Category = "Art",
+                            Description = "Transform your space with this stunning canvas painting featuring a powerful motivational quote and a fierce lion. This bold, high-quality canvas is perfect for home gyms, offices, or living spaces, adding a sense of power and strength to any environment.",
+                            IsActive = true,
+                            Name = "Lion Motivational Canvas",
                             PictureUrl = "https://chrisfabregasfineartprints.com/cdn/shop/products/chris-fabregas-fine-art-photography-motivational-canvas-12-x-18-no-frame-lion-motivational-canvas-inspirational-wall-decor-wall-art-print-40115752108341.jpg?v=1671702904&width=1875",
                             Price = 109.99m,
                             StockQuantity = 10
                         },
                         new
                         {
-                            Id = 3,
-                            Category = "Books",
-                            Description = "A transformative book for those seeking to master their purpose, relationships, and personal growth. \"The Way of the Superior Man\" is a premium resource for professionals and anyone committed to self-improvement. A must-read for cultivating discipline, strength, and clarity in all areas of life.",
+                            Id = 5,
+                            Category = "Art",
+                            Description = "This abstract motivational poster is designed to inspire greatness and positivity. With its vibrant colors and minimalist aesthetic, it fits perfectly into modern offices, gyms, and creative spaces. Stay focused and motivated every time you glance at this bold design.",
                             IsActive = true,
-                            Name = "The way of the superior - Man",
+                            Name = "Abstract Motivational Poster",
+                            PictureUrl = "https://images.unsplash.com/photo-1615297021074-14c6497f9c45",
+                            Price = 49.99m,
+                            StockQuantity = 20
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Category = "Art",
+                            Description = "Bring the tranquility of nature into your home with this beautiful nature-inspired wall art. Perfect for those who seek calm, relaxation, and an escape from the busy world. The artwork features a lush forest landscape to promote peace and serenity.",
+                            IsActive = true,
+                            Name = "Nature-Inspired Wall Art",
+                            PictureUrl = "https://images.unsplash.com/photo-1600271946896-9611cf3a491c",
+                            Price = 89.99m,
+                            StockQuantity = 15
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Category = "Books",
+                            Description = "A transformative book for those seeking to master their purpose, relationships, and personal growth. 'The Way of the Superior Man' is a premium resource for anyone committed to self-improvement. A must-read for cultivating discipline, strength, and clarity in life.",
+                            IsActive = true,
+                            Name = "The Way of the Superior Man",
                             PictureUrl = "https://covers.openlibrary.org/b/id/7387836-L.jpg",
                             Price = 15.99m,
                             StockQuantity = 25
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Category = "Books",
+                            Description = "David Goggins' best-selling autobiography, 'Can't Hurt Me,' is a must-read for those seeking mental toughness and discipline. This book shares powerful lessons about perseverance and embracing discomfort for personal growth.",
+                            IsActive = true,
+                            Name = "Can't Hurt Me",
+                            PictureUrl = "https://m.media-amazon.com/images/I/61O45C5qASL.jpg",
+                            Price = 18.99m,
+                            StockQuantity = 40
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Category = "Books",
+                            Description = "James Clear's 'Atomic Habits' reveals how small changes lead to big transformations. Learn to break bad habits, build new ones, and achieve extraordinary results with practical, science-backed strategies.",
+                            IsActive = true,
+                            Name = "Atomic Habits",
+                            PictureUrl = "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg",
+                            Price = 21.99m,
+                            StockQuantity = 30
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Category = "Books",
+                            Description = "Master the art of focus and eliminate distractions with Cal Newport's 'Deep Work.' Learn to work deeply, maximize productivity, and create meaningful, high-impact work in an era of constant distractions.",
+                            IsActive = true,
+                            Name = "Deep Work",
+                            PictureUrl = "https://m.media-amazon.com/images/I/81OJ1ZGQhyL.jpg",
+                            Price = 14.99m,
+                            StockQuantity = 45
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Category = "Books",
+                            Description = "Robin Sharma's 'The 5AM Club' teaches the power of waking up early and creating a morning routine that maximizes productivity and well-being. Join the 5AM revolution and change your life.",
+                            IsActive = true,
+                            Name = "The 5AM Club",
+                            PictureUrl = "https://m.media-amazon.com/images/I/71uOJo2p+oL.jpg",
+                            Price = 19.99m,
+                            StockQuantity = 50
                         });
                 });
 
@@ -423,6 +541,20 @@ namespace Men_Of_Varna.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "7699db7d-964f-4782-8209-d76562e0fece",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2f78dfe9-a7a8-4d6b-8232-222deba79003",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -517,17 +649,17 @@ namespace Men_Of_Varna.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7699db7d-964f-4782-8209-d76562e0fece",
+                            Id = "a1b2c3d4-e5f6-7g8h-9i10-jk11lm12nopq",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c20faf94-1a63-4dc2-9b11-a76623157d40",
+                            ConcurrencyStamp = "3893d9ca-382d-40d2-9eba-0e52809b7021",
                             Email = "admin@menofvarna.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MENOFVARNA.COM",
                             NormalizedUserName = "ADMIN@MENOFVARNA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHvSJUbfIaM3EIS6bhM8vSjCpNE/GAzOXX8CvPXqMjRxXk1GN1RV9pJXfHKS/mT/LQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJWwRPdqaxqBB+0oupZDWQ01P4ahJbDlAC0hsI0HAEIaZ+peeDWdd4Bkrv3sIGWEMw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b03e5398-af98-4721-9afc-0661663b7bed",
+                            SecurityStamp = "645b6698-a38f-445c-9e92-8a263681ea98",
                             TwoFactorEnabled = false,
                             UserName = "admin@menofvarna.com"
                         });
@@ -597,8 +729,8 @@ namespace Men_Of_Varna.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "7699db7d-964f-4782-8209-d76562e0fece",
-                            RoleId = "6d6c79e8-055f-4508-9102-b8345fc1ca6d"
+                            UserId = "a1b2c3d4-e5f6-7g8h-9i10-jk11lm12nopq",
+                            RoleId = "7699db7d-964f-4782-8209-d76562e0fece"
                         });
                 });
 

@@ -90,6 +90,14 @@ namespace Men_Of_Varna
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.MapGet("/force-error", () =>
+            {
+                throw new Exception("This is a forced 500 error for testing.");
+            });
+
+            app.UseExceptionHandler("/Error/500");
+
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
             app.UseSession();
 
             app.UseRouting();
