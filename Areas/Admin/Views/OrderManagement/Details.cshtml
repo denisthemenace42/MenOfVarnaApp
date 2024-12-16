@@ -1,0 +1,96 @@
+﻿@model Men_Of_Varna.Areas.Admin.ViewModels.OrderDetailViewModel
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Order Details</h1>
+
+    <!-- Order Information -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Order Information</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <strong>Order ID:</strong> #@Model.Id
+                </div>
+                <div class="col-md-6 mb-3">
+                    <strong>Order Date:</strong> @Model.OrderDate.ToString("dd/MM/yyyy HH:mm")
+                </div>
+                <div class="col-md-6 mb-3">
+                    <strong>Customer Email:</strong> @Model.CustomerEmail
+                </div>
+                <div class="col-md-6 mb-3">
+                    <strong>Order Status:</strong>
+                    <span class="badge @(Model.OrderStatus == "Pending" ? "bg-warning" : Model.OrderStatus == "Completed" ? "bg-success" : "bg-secondary")">
+                        @Model.OrderStatus
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping Address -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Shipping Address</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <strong>Address:</strong> @Model.ShippingAddress
+                </div>
+                <div class="col-md-3 mb-3">
+                    <strong>City:</strong> @Model.ShippingCity
+                </div>
+                <div class="col-md-3 mb-3">
+                    <strong>ZIP Code:</strong> @Model.ShippingZip
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Ordered -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Products Ordered</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+
+                    {
+                        <tr>
+                            <td>
+                                <img src="@product.PictureUrl" alt="@product.Name" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;" />
+                            </td>
+                            <td>@product.Name</td>
+                            <td>@product.Price.ToString("C")</td>
+                            <td>@product.Quantity</td>
+                            <td>@((product.Price * product.Quantity).ToString("C"))</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-end">
+            <strong>Total Order Amount: @Model.TotalAmount.ToString("C")</strong>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-between">
+        <a asp-controller="OrderManagement" asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Orders
+        </a>
+    </div>
+</div>

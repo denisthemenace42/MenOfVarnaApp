@@ -16,7 +16,7 @@ namespace Men_Of_Varna.Data
         {
             base.OnModelCreating(builder);
 
-            var defaultUser = new IdentityUser
+            var adminUser = new IdentityUser
             {
                 Id = "7699db7d-964f-4782-8209-d76562e0fece",
                 UserName = "admin@menofvarna.com",
@@ -28,7 +28,9 @@ namespace Men_Of_Varna.Data
                     new IdentityUser { UserName = "admin@menofvarna.com" },
                     "320513")
             };
-            builder.Entity<IdentityUser>().HasData(defaultUser);
+            builder.Entity<IdentityUser>().HasData(adminUser);
+            builder.Entity<IdentityUserRole<string>>().HasData(
+            new IdentityUserRole<string> { RoleId = "6d6c79e8-055f-4508-9102-b8345fc1ca6d", UserId = adminUser.Id });
 
             builder.Entity<Product>()
                    .Property(p => p.Price)
@@ -59,6 +61,12 @@ namespace Men_Of_Varna.Data
                   .HasOne(ue => ue.Event)
                   .WithMany(e => e.UserEvents) 
                   .HasForeignKey(ue => ue.EventId);
+
+            builder.Entity<Comment>()
+                   .HasOne(c => c.Event)
+                   .WithMany(e => e.Comments) // Ensure Event has a Comments collection
+                   .HasForeignKey(c => c.EventId)
+                   .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Event>().HasData(
                 new Event
@@ -100,7 +108,88 @@ namespace Men_Of_Varna.Data
                     PublishedOn = new DateTime(2024, 4, 1),
                     CreatedBy = "admin@menofvarna.com",
                     IsUpcoming = false
+                },
+                new Event
+                {
+                    Id = 6,
+                    Name = "Beach Cleanup",
+                    Description = "Join us to clean up the beautiful beaches of Varna.",
+                    PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
+                    PublishedOn = new DateTime(2024, 1, 5),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = false
+                },
+                new Event
+                {
+                    Id = 7,
+                    Name = "Mountain Hike",
+                    Description = "An adventurous hike through the scenic mountains.",
+                    PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
+                    PublishedOn = new DateTime(2024, 12, 12),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = true
+                },
+                new Event
+                {
+                    Id = 8,
+                    Name = "Community Yoga",
+                    Description = "Relax and rejuvenate with a free yoga session for all.",
+                    PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
+                    PublishedOn = new DateTime(2024, 3, 8),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = false
+                },
+                new Event
+                {
+                    Id = 9,
+                    Name = "Book Club Meeting",
+                    Description = "Discussing 'The Way of the Superior Man' by David Deida.",
+                    PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
+                    PublishedOn = new DateTime(2024, 4, 1),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = false
+                },
+                new Event
+                {
+                    Id = 10,
+                    Name = "Beach Cleanup",
+                    Description = "Join us to clean up the beautiful beaches of Varna.",
+                    PictureUrl = "https://media.istockphoto.com/id/1435005446/photo/recyclers-cleaning-the-beach.jpg?s=612x612&w=0&k=20&c=92lBY2A3i0c32_1wd_tTulVcaW0crv8jItFucmS75qo=",
+                    PublishedOn = new DateTime(2024, 1, 5),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = false
+                },
+                new Event
+                {
+                    Id = 11,
+                    Name = "Mountain Hike",
+                    Description = "An adventurous hike through the scenic mountains.",
+                    PictureUrl = "https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_342/s/editorial/wandern-fernwandern/wandern-arten-text-media-header.jpg",
+                    PublishedOn = new DateTime(2024, 12, 12),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = true
+                },
+                new Event
+                {
+                    Id = 12,
+                    Name = "Community Yoga",
+                    Description = "Relax and rejuvenate with a free yoga session for all.",
+                    PictureUrl = "https://us.images.westend61.de/0001286137pw/group-of-women-and-men-taking-part-in-a-yoga-class-on-a-hillside-MINF13084.jpg",
+                    PublishedOn = new DateTime(2024, 3, 8),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = false
+                },
+                new Event
+                {
+                    Id = 13,
+                    Name = "Book Club Meeting",
+                    Description = "Discussing 'The Way of the Superior Man' by David Deida.",
+                    PictureUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcs7-ie7L5V2_GIF8xzqredf5cHQunEC7GA&s",
+                    PublishedOn = new DateTime(2024, 4, 1),
+                    CreatedBy = "admin@menofvarna.com",
+                    IsUpcoming = false
                 });
+
 
 
             builder.Entity<Product>().HasData(

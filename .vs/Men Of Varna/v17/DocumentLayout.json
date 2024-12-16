@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\common\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:common\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\models\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:models\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\models\\events\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:models\\events\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\admin\\views\\usermanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\admin\\views\\usermanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\admin\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\admin\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\identity\\pages\\account\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\identity\\pages\\account\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\admin\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\admin\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,99 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T21:20:34.622Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T21:15:53.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DatabaseSeeder.cs",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Common\\DatabaseSeeder.cs",
-              "RelativeDocumentMoniker": "Common\\DatabaseSeeder.cs",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Common\\DatabaseSeeder.cs",
-              "RelativeToolTip": "Common\\DatabaseSeeder.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T21:01:33.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T20:59:35.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T20:59:30.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Views\\UserManagement\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\UserManagement\\Index.cshtml",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Views\\UserManagement\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\UserManagement\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T20:51:17.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\ViewModels\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\ViewModels\\UserViewModel.cs",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\ViewModels\\UserViewModel.cs",
-              "RelativeToolTip": "Areas\\Admin\\ViewModels\\UserViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T20:44:07.115Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -150,40 +43,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UserManagementController.cs",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Controllers\\UserManagementController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\UserManagementController.cs",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Controllers\\UserManagementController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\UserManagementController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA6wEIAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T20:38:02.253Z",
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAABkBAAAAAAAAAAAkwDYBAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-16T09:40:18.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "EventViewModel.cs",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Models\\Events\\EventViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\Events\\EventViewModel.cs",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Models\\Events\\EventViewModel.cs",
+              "RelativeToolTip": "Models\\Events\\EventViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T20:37:19.795Z",
+              "WhenOpened": "2024-12-16T09:37:24.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaginatedList.cs",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Models\\PaginatedList.cs",
+              "RelativeDocumentMoniker": "Models\\PaginatedList.cs",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Models\\PaginatedList.cs",
+              "RelativeToolTip": "Models\\PaginatedList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T09:36:13.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T09:35:24.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Views\\Event\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Index.cshtml",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Views\\Event\\Index.cshtml",
+              "RelativeToolTip": "Views\\Event\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T09:34:59.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBsAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T19:59:37.288Z",
+              "WhenOpened": "2024-12-16T09:20:10.652Z",
               "EditorCaption": ""
             }
           ]

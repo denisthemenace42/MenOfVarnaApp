@@ -7,7 +7,7 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
     <h2>@ViewData["Title"]</h2>
-    @if (User?.Identity?.IsAuthenticated == true && User.Identity.Name == "admin@menofvarna.com")
+    @if (User?.IsInRole("Admin") ?? false)
     {
         <a asp-controller="Store" asp-action="Add" class="btn btn-primary">
             <i class="fas fa-plus"></i> Add Product

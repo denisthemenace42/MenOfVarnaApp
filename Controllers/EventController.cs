@@ -1,5 +1,6 @@
 ﻿using Men_Of_Varna.Contracts;
 using Men_Of_Varna.Data.Models;
+using Men_Of_Varna.Models;
 using Men_Of_Varna.Models.Events;
 using Men_Of_Varna.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -25,13 +26,38 @@ namespace Men_Of_Varna.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 8) // 🟢 Default 8 items per page
         {
             var userId = userManager.GetUserId(User);
-            var events = await eventService.GetAllEventsAsync(userId);
-            var orderedEvents = events.OrderByDescending(e => e.PublishedOn).ToList();
 
-            return View(orderedEvents);
+            // 1️⃣ Get total number of events
+            var totalEvents = await eventService.GetAllEventsAsync(userId);
+            var orderedEvents = totalEvents.OrderByDescending(e => e.PublishedOn).ToList();
+
+            // 2️⃣ Paginate the list using Skip and Take
+            var paginatedEvents = orderedEvents
+                .Skip((pageNumber - 1) * pageSize) // 🟢 Skip events for previous pages
+                .Take(pageSize) // 🟢 Take only the events for the current page
+                .ToList();
+
+            // 3️⃣ Create the PaginatedList ViewModel
+            var viewModel = new PaginatedList<EventViewModel>
+            {
+                Items = paginatedEvents.Select(e => new EventViewModel
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    Description = e.Description,
+                    ImageUrl = e.ImageUrl,
+                    PublishedOn = e.PublishedOn,
+                    IsUpcoming = e.IsUpcoming
+                }).ToList(),
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalItems = orderedEvents.Count // 🟢 Total items before pagination
+            };
+
+            return View(viewModel);
         }
 
         [HttpGet]

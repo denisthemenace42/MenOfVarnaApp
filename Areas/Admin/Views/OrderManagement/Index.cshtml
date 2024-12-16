@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Men_Of_Varna.Areas.Admin.ViewModels.OrderViewModel>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Order Management</h1>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Order Date</th>
+                <th>Status</th>
+                <th>Order Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>#@order.Id</td>
+                    <td>@order.CustomerEmail</td>
+                    <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <span class="badge @(order.OrderStatus == "Pending" ? "bg-warning" : order.OrderStatus == "Completed" ? "bg-success" : "bg-secondary")">
+                            @order.OrderStatus
+                        </span>
+                    </td>
+                    <td>@order.TotalAmount.ToString("C")</td>
+                    <td>
+                        <!-- Change Status Form -->
+                        <form method="post" asp-action="ChangeOrderStatus" asp-controller="OrderManagement" asp-area="Admin" class="d-inline">
+                            <input type="hidden" name="orderId" value="@order.Id" />
+                            <select name="status" class="form-select d-inline w-auto">
+                                @if (order.OrderStatus == "Pending")
+                                {
+                                    <option value="Pending" selected="selected">Pending</option>
+                                }
+                                else
+                                {
+                                    <option value="Pending">Pending</option>
+                                }
+
+                                @if (order.OrderStatus == "Processing")
+                                {
+                                    <option value="Processing" selected="selected">Processing</option>
+                                }
+                                else
+                                {
+                                    <option value="Processing">Processing</option>
+                                }
+
+                                @if (order.OrderStatus == "Shipped")
+                                {
+                                    <option value="Shipped" selected="selected">Shipped</option>
+                                }
+                                else
+                                {
+                                    <option value="Shipped">Shipped</option>
+                                }
+
+                                @if (order.OrderStatus == "Completed")
+                                {
+                                    <option value="Completed" selected="selected">Completed</option>
+                                }
+                                else
+                                {
+                                    <option value="Completed">Completed</option>
+                                }
+
+                                @if (order.OrderStatus == "Cancelled")
+                                {
+                                    <option value="Cancelled" selected="selected">Cancelled</option>
+                                }
+                                else
+                                {
+                                    <option value="Cancelled">Cancelled</option>
+                                }
+                            </select>
+
+
+
+                            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                        </form>
+
+                        <!-- View Order Details -->
+                        <a asp-action="Details" asp-controller="OrderManagement" asp-area="Admin" asp-route-id="@order.Id" class="btn btn-info btn-sm ms-2">
+                            <i class="fas fa-info-circle"></i> View Details
+                        </a>
+
+                        <!-- Delete Order Form -->
+                        <form method="post" asp-action="DeleteOrder" asp-controller="OrderManagement" asp-area="Admin" class="d-inline ms-2">
+                            <input type="hidden" name="orderId" value="@order.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

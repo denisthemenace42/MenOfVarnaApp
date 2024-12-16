@@ -14,5 +14,9 @@ namespace Men_Of_Varna.Contracts
         Task PlaceOrderAsync(Order order);
         Task<Order?> GetOrderDetailsAsync(int orderId, string userId);
         Task<List<Order>> GetUserOrdersAsync(string userId);
+        Task DeleteOrderAsync(int orderId);
+        Task UpdateOrderStatusAsync(int orderId, string status);
+        Task<Order?> GetOrderByIdAsync(int orderId);
+        Task<List<Order>> GetAllOrdersAsync();
     }
 }

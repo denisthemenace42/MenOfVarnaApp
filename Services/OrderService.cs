@@ -170,6 +170,45 @@ namespace Men_Of_Varna.Services
                 .FirstOrDefaultAsync();
         }
 
+        public async Task<List<Order>> GetAllOrdersAsync()
+        {
+            return await dbContext.Orders
+                .Include(o => o.Customer)
+                .Include(o => o.OrderProducts)
+                .ThenInclude(op => op.Product)
+                .ToListAsync();
+        }
+
+        // 2️⃣ Get specific order by ID
+        public async Task<Order?> GetOrderByIdAsync(int orderId)
+        {
+            return await dbContext.Orders
+                .Include(o => o.Customer)
+                .Include(o => o.OrderProducts)
+                .ThenInclude(op => op.Product)
+                .FirstOrDefaultAsync(o => o.Id == orderId);
+        }
+
+        // 3️⃣ Update order status
+        public async Task UpdateOrderStatusAsync(int orderId, string status)
+        {
+            var order = await dbContext.Orders.FindAsync(orderId);
+            if (order == null) throw new InvalidOperationException("Order not found.");
+
+            order.OrderStatus = status;
+            await dbContext.SaveChangesAsync();
+        }
+
+        // 4️⃣ Delete an order
+        public async Task DeleteOrderAsync(int orderId)
+        {
+            var order = await dbContext.Orders.FindAsync(orderId);
+            if (order == null) throw new InvalidOperationException("Order not found.");
+
+            dbContext.Orders.Remove(order);
+            await dbContext.SaveChangesAsync();
+        }
+
 
 
     }

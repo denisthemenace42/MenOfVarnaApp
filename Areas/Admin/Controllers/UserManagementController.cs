@@ -62,16 +62,31 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteUser(string userId, string role)
+        public async Task<IActionResult> DeleteUser(string userId)
         {
-            var user = await userManager.FindByIdAsync(userId);
-            if (user != null && await roleManager.RoleExistsAsync(role))
+            if (string.IsNullOrWhiteSpace(userId))
             {
-                await userManager.DeleteAsync(user);
+                TempData["ErrorMessage"] = "User ID is required.";
+                return RedirectToAction("Index");
+            }
+
+            var user = await userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                var result = await userManager.DeleteAsync(user);
+                if (!result.Succeeded)
+                {
+                    TempData["ErrorMessage"] = "Failed to delete user.";
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "User not found.";
             }
 
             return RedirectToAction("Index");
         }
+
 
 
     }

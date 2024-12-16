@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Men Of Varna")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+819384ef43441e5eff75b01c2401bd1e8d3378d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e43089ea5b9494c92b7493450ca03fe0480671a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Men Of Varna")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Men Of Varna")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

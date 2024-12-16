@@ -1,10 +1,9 @@
-﻿@{
-    ViewData["Title"] = "All Events";
-}
+﻿@using Men_Of_Varna.Models
+@model PaginatedList<Men_Of_Varna.Models.Events.EventViewModel>
 
 <div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
-    <h2>@ViewData["Title"]</h2>
-    @if (User?.Identity?.IsAuthenticated == true && User.Identity.Name == "admin@menofvarna.com")
+    <h2>@ViewData["Title"] All Events</h2>
+    @if (User?.IsInRole("Admin") ?? false)
     {
         <a asp-controller="Event" asp-action="Add" class="btn btn-primary">
             <i class="fas fa-plus"></i> Add Event
@@ -14,7 +13,7 @@
 <hr />
 
 <div class="row text-center">
-    @foreach (var eventItem in Model)
+    @foreach (var eventItem in Model.Items)
     {
         <div class="col-md-3 mb-4">
             <div class="card h-100" style="width: 100%;">
@@ -32,30 +31,42 @@
                     <p class="card-text">@eventItem.Description</p>
                     <p class="card-text"><small>Published on: @eventItem.PublishedOn.ToString("dd/MM/yyyy")</small></p>
                     <div class="d-flex justify-content-between mt-auto">
-                        @if (User?.Identity?.IsAuthenticated == true && !eventItem.IsPublisher && !eventItem.IsAttending)
-                        {
-                            <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info me-2 w-100">
-                                <i class="fas fa-info-circle"></i> Details
-                            </a>
-                            @if (eventItem?.IsUpcoming == true)
-                            {
-                                <form asp-controller="Event" asp-action="Attend" method="post" class="w-100">
-                                    <input type="hidden" name="id" value="@eventItem.Id" />
-                                    <button type="submit" class="btn btn-success w-100">
-                                        <i class="fas fa-check"></i> Attend
-                                    </button>
-                                </form>
-                            }
-                        }
-                        else
-                        {
-                            <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info w-100">
-                                <i class="fas fa-info-circle"></i> Details
-                            </a>
-                        }
+                        <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info w-100">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     }
 </div>
+
+<hr />
+
+<!-- Pagination Controls -->
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-pageNumber="@i">@i</a>
+            </li>
+        }
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
