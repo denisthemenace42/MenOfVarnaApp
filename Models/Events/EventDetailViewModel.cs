@@ -12,7 +12,7 @@ namespace Men_Of_Varna.Models.Events
         public string CreatedBy { get; set; } = null!;
         public bool IsUpcoming { get; set; }
         public int AttendeesCount { get; set; }
-        public bool IsAttending { get; set; } // Track if the current user is attending
+        public bool IsAttending { get; set; } 
         public List<CommentViewModel> Comments { get; set; } = new();
     }
 

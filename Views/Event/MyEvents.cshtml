@@ -37,7 +37,6 @@ else
                 <p class="text-muted mb-0"><small>Description: @eventItem.Description</small></p>
             </div>
             <div class="col-md-2 text-end">
-                <!-- Button to remove user from the event -->
                 <form asp-action="GiveUpOnEvent" method="post" asp-route-eventId="@eventItem.Id">
                     <button type="submit" class="btn btn-danger">
                         <i class="fas fa-times-circle"></i> Give Up
@@ -45,7 +44,6 @@ else
                 </form>
             </div>
             <div class="col-md-2 text-end">
-                <!-- Details Button -->
                 <a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-info">
                     <i class="fas fa-info-circle"></i> Details
                 </a>

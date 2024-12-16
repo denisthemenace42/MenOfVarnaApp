@@ -15,13 +15,17 @@ namespace Men_Of_Varna.Models.Order
         }
 
         [Required(ErrorMessage = "Shipping address is required.")]
+        [StringLength(200, ErrorMessage = "Shipping address cannot exceed 200 characters.")]
         public string ShippingAddress { get; set; } = null!;
 
         [Required(ErrorMessage = "Shipping city is required.")]
+        [StringLength(100, ErrorMessage = "City name cannot exceed 100 characters.")]
+        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "City name can only contain letters and spaces.")]
         public string ShippingCity { get; set; } = null!;
 
         [Required(ErrorMessage = "Shipping ZIP code is required.")]
         [StringLength(10, ErrorMessage = "ZIP code cannot exceed 10 characters.")]
+        [RegularExpression(@"^\d{4,10}$", ErrorMessage = "ZIP code must be between 4 and 10 digits.")]
         public string ShippingZip { get; set; } = null!;
     }
 

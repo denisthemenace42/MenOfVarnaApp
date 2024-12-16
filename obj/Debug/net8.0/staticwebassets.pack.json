@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\images\\empty-cart.png"
     },
     {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
       "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\images\\no-orders.png",
       "PackagePath": "staticwebassets\\images\\no-orders.png"
     },

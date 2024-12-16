@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TrKj2tAYdNJ6FQj+hqVH2fak9vA/E13K8/dU+RSACds=",
+  "Hash": "iw80n6li6+01rfIExIZsIKn2ZCfYkFM1IYCVZw+F320=",
   "Source": "Men Of Varna",
   "BasePath": "_content/Men Of Varna",
   "Mode": "Default",
@@ -1345,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\empty-cart.png"
+    },
+    {
+      "Identity": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\images\\logo.png",
+      "SourceId": "Men Of Varna",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\",
+      "BasePath": "_content/Men Of Varna",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\images\\no-orders.png",

@@ -6,16 +6,12 @@
         public string CustomerEmail { get; set; } = string.Empty;
         public DateTime OrderDate { get; set; }
         public string OrderStatus { get; set; } = "Pending";
-
-        // Shipping Info
         public string ShippingAddress { get; set; } = string.Empty;
         public string ShippingCity { get; set; } = string.Empty;
         public string ShippingZip { get; set; } = string.Empty;
 
-        // Products in the Order
         public List<OrderProductViewModel> Products { get; set; } = new List<OrderProductViewModel>();
 
-        // Total Order Amount
         public decimal TotalAmount
         {
             get
