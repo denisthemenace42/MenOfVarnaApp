@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Men_Of_Varna.Models.Feedback.FeedbackViewModel>
+
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h2 class="display-5 text-primary">All Feedbacks</h2>
+        <p class="lead text-muted">Here you can view all feedback submitted by users.</p>
+    </div>
+
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-primary text-center">
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 25%;">User Email</th>
+                <th style="width: 50%;">Feedback Content</th>
+                <th style="width: 15%;">Submitted On</th>
+                <th style="width: 5%;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var feedback in Model)
+                {
+                    <tr class="text-center align-middle">
+                        <td>@feedback.Id</td>
+                        <td>@feedback.UserId</td> 
+                        <td class="text-start">@feedback.Content</td>
+                        <td>@feedback.SubmittedOn.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>
+                            <form asp-area="Admin" asp-controller="FeedbackManagement" asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this feedback?');">
+                                <input type="hidden" name="id" value="@feedback.Id" />
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">No feedbacks available.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

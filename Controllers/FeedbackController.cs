@@ -38,13 +38,13 @@ namespace Men_Of_Varna.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", model); // Return to the form with validation errors
+                return View("Index", model); 
             }
 
             var userId = userManager.GetUserId(User);
             if (userId == null)
             {
-                return Unauthorized(); // Ensure the user is logged in
+                return Unauthorized(); 
             }
 
             var feedback = new Feedback
