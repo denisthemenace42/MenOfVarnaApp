@@ -6,8 +6,6 @@
 
 <div class="container mt-4">
     <h2 class="mb-4">Order Details</h2>
-
-    <!-- Order Summary -->
     <div class="card mb-4">
         <div class="card-header">
             <h4>Order #@Model.OrderId</h4>
@@ -19,8 +17,6 @@
             <p><strong>Total Amount:</strong> @Model.OrderTotal.ToString("C")</p>
         </div>
     </div>
-
-    <!-- Product List -->
     <h4>Products in this Order</h4>
     <table class="table table-bordered">
         <thead class="table-dark">
@@ -43,8 +39,6 @@
             }
         </tbody>
     </table>
-
-    <!-- Back Button -->
     <div class="mt-3">
         <a asp-controller="Order" asp-action="History" class="btn btn-secondary">
             <i class="fas fa-arrow-left"></i> Back to Order History

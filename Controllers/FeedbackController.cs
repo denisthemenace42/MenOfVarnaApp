@@ -12,7 +12,7 @@ namespace Men_Of_Varna.Controllers
     {
         private readonly IFeedbackService feedbackService;
         private readonly UserManager<IdentityUser> userManager;
-       
+
 
         public FeedbackController(IFeedbackService feedbackService, UserManager<IdentityUser> userManager)
         {
@@ -24,11 +24,7 @@ namespace Men_Of_Varna.Controllers
         [HttpGet]
         public IActionResult Index(int? eventId, int? productId)
         {
-            var model = new FeedbackViewModel
-            {
-               
-            };
-
+            var model = new FeedbackViewModel { };
             return View(model);
         }
 
@@ -38,13 +34,13 @@ namespace Men_Of_Varna.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", model); 
+                return View("Index", model);
             }
 
             var userId = userManager.GetUserId(User);
             if (userId == null)
             {
-                return Unauthorized(); 
+                return Unauthorized();
             }
 
             var feedback = new Feedback
@@ -52,13 +48,13 @@ namespace Men_Of_Varna.Controllers
                 UserId = userId,
                 Content = model.Content,
                 SubmittedOn = DateTime.UtcNow,
-                
+
             };
 
             await feedbackService.SubmitFeedbackAsync(feedback);
 
             TempData["SuccessMessage"] = "Your feedback has been submitted successfully.";
-            return RedirectToAction("Index", "Feedback"); 
+            return RedirectToAction("Index", "Feedback");
         }
 
     }

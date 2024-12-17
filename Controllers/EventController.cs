@@ -23,40 +23,31 @@ namespace Men_Of_Varna.Controllers
         {
             this.eventService = eventService;
             this.userManager = userManager;
-
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Index([FromQuery] string searchQuery = "", [FromQuery] bool? showUpcoming = null, int pageNumber = 1, int pageSize = 8)
         {
-            // If showUpcoming is null, it means the checkbox was not checked
             bool isUpcoming = showUpcoming ?? false;
-
             var userId = userManager.GetUserId(User);
-
-            // 1️⃣ Get total number of events
             var totalEvents = await eventService.GetAllEventsAsync(userId);
 
-            // 2️⃣ Apply search filter (case-insensitive)
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 totalEvents = totalEvents.Where(e => e.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
-            // 3️⃣ Apply "Upcoming Events" filter
             if (isUpcoming)
             {
                 totalEvents = totalEvents.Where(e => e.IsUpcoming == true).ToList();
             }
 
-            // 4️⃣ Order and paginate the list
             var orderedEvents = totalEvents.OrderByDescending(e => e.PublishedOn).ToList();
             var paginatedEvents = orderedEvents
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
-            // 5️⃣ Create the PaginatedList ViewModel
             var viewModel = new PaginatedList<EventViewModel>
             {
                 Items = paginatedEvents.Select(e => new EventViewModel
@@ -83,7 +74,7 @@ namespace Men_Of_Varna.Controllers
         {
             var model = new AddEventViewModel
             {
-                PublishedOn = DateTime.Now // Default value for PublishedOn
+                PublishedOn = DateTime.Now
             };
             return View(model);
         }
@@ -93,29 +84,27 @@ namespace Men_Of_Varna.Controllers
         {
             if (ModelState.IsValid)
             {
-                string userId = User.Identity.Name; // Assuming the user is authenticated
+                string userId = User.Identity.Name;
                 await eventService.AddEventAsync(model, userId);
-                return RedirectToAction("Index"); // Redirect to event list or another page
+                return RedirectToAction("Index");
             }
 
-            return View(model); // Return the model with validation errors if not valid
+            return View(model);
         }
 
         public async Task<IActionResult> Details(int id)
         {
-            var userId = userManager.GetUserId(User); // Retrieve the logged-in user's ID
+            var userId = userManager.GetUserId(User);
             var eventDetailViewModel = await eventService.GetEventDetailsAsync(id, userId);
 
             if (eventDetailViewModel == null)
             {
-                return NotFound(); // Handle if event is not found
+                return NotFound();
             }
 
-            return View(eventDetailViewModel); // Return the view with the view model
+            return View(eventDetailViewModel);
         }
 
-
-        // Add Comment Action - Adds a comment to the event
         [HttpPost]
         public async Task<IActionResult> AddComment(int eventId, string content)
         {
@@ -127,7 +116,7 @@ namespace Men_Of_Varna.Controllers
                 return RedirectToAction("Details", new { id = eventId });
             }
 
-            return RedirectToAction("Login", "Account");  // Redirect to login if the user is not authenticated
+            return RedirectToAction("Login", "Account");
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -145,7 +134,7 @@ namespace Men_Of_Varna.Controllers
                 Id = destination.Id,
                 Name = destination.Name,
                 CreatedBy = destination.CreatedBy,
-            
+
             };
 
             return View(model);
@@ -222,7 +211,7 @@ namespace Men_Of_Varna.Controllers
             var userId = userManager.GetUserId(User);
             await eventService.AddToMyEventsAsync(id, userId);
 
-            var eventModel = await eventService.GetEventDetailsAsync(id,userId);
+            var eventModel = await eventService.GetEventDetailsAsync(id, userId);
             eventModel.AttendeesCount = await eventService.GetAttendeesCountAsync(id);
 
             eventModel.IsAttending = true;
@@ -264,14 +253,13 @@ namespace Men_Of_Varna.Controllers
 
             if (!result)
             {
-                return NotFound(); // Return not found if something goes wrong
+                return NotFound();
             }
 
-            // Redirect back to the My Events page
             return RedirectToAction("MyEvents");
         }
 
-        
+
 
 
     }

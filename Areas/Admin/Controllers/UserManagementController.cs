@@ -5,49 +5,48 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Men_Of_Varna.Areas.Admin.Controllers
 {
-	[Area("Admin")]
-	[Authorize(Roles = "Admin")]
-	public class UserManagementController : Controller
-	{
-		private readonly UserManager<IdentityUser> userManager;
-		private readonly RoleManager<IdentityRole> roleManager;
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+    public class UserManagementController : Controller
+    {
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-		public UserManagementController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
-		{
-			this.userManager = userManager;
-			this.roleManager = roleManager;
-		}
+        public UserManagementController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        {
+            this.userManager = userManager;
+            this.roleManager = roleManager;
+        }
 
-		public async Task<IActionResult> Index()
-		{
-			var users = this.userManager.Users.ToList();
-			var userViewModel = new List<UserViewModel>();
+        public async Task<IActionResult> Index()
+        {
+            var users = this.userManager.Users.ToList();
+            var userViewModel = new List<UserViewModel>();
 
-            foreach (var  user in users)
+            foreach (var user in users)
             {
-				var roles = await userManager.GetRolesAsync(user);
-				userViewModel.Add(new UserViewModel
-				{
-					Id = user.Id,
-					Email = user.Email,
-					Roles = roles.ToList(),
-				});
-                
+                var roles = await userManager.GetRolesAsync(user);
+                userViewModel.Add(new UserViewModel
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    Roles = roles.ToList(),
+                });
             }
             return View(userViewModel);
-		}
+        }
 
-		[HttpPost]
-		public async Task<IActionResult>AssignRole(string userId, string role)
-		{
-			var user = await userManager.FindByIdAsync(userId);
-			if (user != null && await roleManager.RoleExistsAsync(role))
-			{
-				await userManager.AddToRoleAsync(user, role);
-			}
+        [HttpPost]
+        public async Task<IActionResult> AssignRole(string userId, string role)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+            if (user != null && await roleManager.RoleExistsAsync(role))
+            {
+                await userManager.AddToRoleAsync(user, role);
+            }
 
-			return RedirectToAction("Index");
-		}
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public async Task<IActionResult> RemoveRole(string userId, string role)
@@ -86,8 +85,5 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
-
-
-
     }
 }

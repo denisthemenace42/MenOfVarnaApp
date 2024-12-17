@@ -26,55 +26,49 @@ namespace Men_Of_Varna.Services
                     ImageUrl = e.PictureUrl,
                     Description = e.Description,
                     PublishedOn = e.PublishedOn,
-                    AttendeesCount = e.UserEvents.Count, // Assuming a many-to-many relation between Event and User
+                    AttendeesCount = e.UserEvents.Count,
                     IsPublisher = e.CreatedBy == userId,
                     IsAttending = e.UserEvents.Any(ue => ue.UserId == userId),
-                   IsUpcoming = e.IsUpcoming,
+                    IsUpcoming = e.IsUpcoming,
                 })
                 .ToListAsync();
         }
 
         public async Task AddEventAsync(AddEventViewModel model, string userId)
         {
-            // Ensure the published date is correctly parsed
-            var publishedOnDate = model.PublishedOn; // In this case, no need to parse as it's a DateTime
-
-            // Create the Event object
+            var publishedOnDate = model.PublishedOn;
             var eventEntity = new Event
             {
                 Name = model.Name,
                 Description = model.Description,
-                PictureUrl = model.ImageUrl, // Assuming ImageUrl is the field for the picture
+                PictureUrl = model.ImageUrl,
                 PublishedOn = publishedOnDate,
-                CreatedBy = userId, // Assuming the userId is passed for tracking who created the event
+                CreatedBy = userId,
                 IsUpcoming = model.IsUpcoming
             };
 
-            // Add the event to the database context
             dbContext.Events.Add(eventEntity);
-            await dbContext.SaveChangesAsync(); // Save changes to the database
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<EventDetailViewModel> GetEventDetailsAsync(int eventId, string userId)
         {
             var eventDetails = await dbContext.Events
-                .Include(e => e.Comments)  // Include comments related to the event
+                .Include(e => e.Comments)
                 .FirstOrDefaultAsync(e => e.Id == eventId);
 
             if (eventDetails == null)
             {
-                return null; // Handle event not found
+                return null;
             }
 
-            // Check if the user is attending the event
+
             var isAttending = await dbContext.UserEvents
                 .AnyAsync(ue => ue.UserId == userId && ue.EventId == eventId);
 
-            // Get the number of attendees
             var attendeesCount = await dbContext.UserEvents
                 .CountAsync(ue => ue.EventId == eventId);
 
-            // Create the view model
             var eventDetailViewModel = new EventDetailViewModel
             {
                 Id = eventDetails.Id,
@@ -114,8 +108,6 @@ namespace Men_Of_Varna.Services
             }
         }
 
-
-        // Add a comment to an event
         public async Task AddCommentAsync(int eventId, string content, string author)
         {
             var newComment = new Comment
@@ -156,7 +148,6 @@ namespace Men_Of_Varna.Services
 
         public async Task AddToMyEventsAsync(int eventId, string userId)
         {
-            // Check if the user is already attending the event
             var existingEntry = await dbContext.UserEvents
                 .FirstOrDefaultAsync(ue => ue.UserId == userId && ue.EventId == eventId);
 
@@ -165,7 +156,6 @@ namespace Men_Of_Varna.Services
                 throw new InvalidOperationException("The user is already attending this event.");
             }
 
-            // Create a new UserEvent instance
             var userEvent = new UserEvent
             {
                 UserId = userId,
@@ -173,7 +163,6 @@ namespace Men_Of_Varna.Services
                 JoinedOn = DateTime.UtcNow
             };
 
-            // Add to the DbSet and save changes
             await dbContext.UserEvents.AddAsync(userEvent);
             await dbContext.SaveChangesAsync();
         }
@@ -199,24 +188,17 @@ namespace Men_Of_Varna.Services
 
             if (userEvent == null)
             {
-                return false; // If the user is not associated with the event, return false
+                return false;
             }
 
             dbContext.UserEvents.Remove(userEvent);
             await dbContext.SaveChangesAsync();
-
-            return true; // Successfully removed the user from the event
+            return true;
         }
 
         public async Task<int> GetAttendeesCountAsync(int eventId)
         {
             return await dbContext.UserEvents.CountAsync(ue => ue.EventId == eventId);
         }
-
-        
-
-
-
     }
-
 }

@@ -589,3 +589,9 @@ D:\CSHARP_MenOfVarnaApp_Nov2024\obj\Debug\net8.0\refint\Men Of Varna.dll
 D:\CSHARP_MenOfVarnaApp_Nov2024\obj\Debug\net8.0\Men Of Varna.pdb
 D:\CSHARP_MenOfVarnaApp_Nov2024\obj\Debug\net8.0\Men Of Varna.genruntimeconfig.cache
 D:\CSHARP_MenOfVarnaApp_Nov2024\obj\Debug\net8.0\ref\Men Of Varna.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\bin\Debug\net8.0\Castle.Core.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\bin\Debug\net8.0\Moq.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\bin\Debug\net8.0\xunit.abstractions.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\bin\Debug\net8.0\xunit.assert.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\bin\Debug\net8.0\xunit.core.dll
+D:\CSHARP_MenOfVarnaApp_Nov2024\bin\Debug\net8.0\xunit.execution.dotnet.dll

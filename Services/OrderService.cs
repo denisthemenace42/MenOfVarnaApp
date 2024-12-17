@@ -45,7 +45,7 @@ namespace Men_Of_Varna.Services
         public void SaveCartToSession(ISession session, OrderViewModel cart)
         {
             var value = JsonConvert.SerializeObject(cart);
-            Console.WriteLine("🛒 Cart before saving: " + value); 
+            Console.WriteLine("🛒 Cart before saving: " + value);
             session.SetString(CartSessionKey, value);
         }
 
@@ -75,10 +75,10 @@ namespace Men_Of_Varna.Services
                 cart.Products.Add(new OrderProductViewModel
                 {
                     Id = productId,
-                    Name = product.Name, 
-                    Price = product.Price, 
-                    Quantity = 1, 
-                    StockQuantity = product.StockQuantity 
+                    Name = product.Name,
+                    Price = product.Price,
+                    Quantity = 1,
+                    StockQuantity = product.StockQuantity
                 });
             }
 
@@ -95,12 +95,8 @@ namespace Men_Of_Varna.Services
 
         public async Task CheckoutAsync(ISession session, string userId)
         {
-            // Handle checkout logic (e.g., save the order to the database)
-            // Here you can persist the order, send an email confirmation, etc.
-
-            // Example of clearing the cart
             session.Remove(CartSessionKey);
-            await Task.CompletedTask; 
+            await Task.CompletedTask;
         }
 
         public void UpdateQuantity(ISession session, int productId, int quantity)
@@ -118,7 +114,7 @@ namespace Men_Of_Varna.Services
             {
                 product.Quantity = quantity;
             }
-          
+
             SaveCartToSession(session, cart);
         }
 
@@ -129,7 +125,6 @@ namespace Men_Of_Varna.Services
                 throw new InvalidOperationException("Order must have at least one product.");
             }
 
-            // Debugging to log the data before saving
             Console.WriteLine("Placing order...");
             Console.WriteLine($"Order has {order.OrderProducts.Count} products");
 
@@ -150,13 +145,12 @@ namespace Men_Of_Varna.Services
         }
 
 
-
         public async Task<List<Order>> GetUserOrdersAsync(string userId)
         {
             return await dbContext.Orders
                 .Where(o => o.CustomerId == userId)
-                .Include(o => o.OrderProducts) // Include OrderProducts
-                .ThenInclude(op => op.Product) // Include Product details
+                .Include(o => o.OrderProducts) 
+                .ThenInclude(op => op.Product) 
                 .ToListAsync();
         }
 
@@ -179,7 +173,6 @@ namespace Men_Of_Varna.Services
                 .ToListAsync();
         }
 
-        // 2️⃣ Get specific order by ID
         public async Task<Order?> GetOrderByIdAsync(int orderId)
         {
             return await dbContext.Orders
@@ -189,7 +182,6 @@ namespace Men_Of_Varna.Services
                 .FirstOrDefaultAsync(o => o.Id == orderId);
         }
 
-        // 3️⃣ Update order status
         public async Task UpdateOrderStatusAsync(int orderId, string status)
         {
             var order = await dbContext.Orders.FindAsync(orderId);
@@ -199,7 +191,6 @@ namespace Men_Of_Varna.Services
             await dbContext.SaveChangesAsync();
         }
 
-        // 4️⃣ Delete an order
         public async Task DeleteOrderAsync(int orderId)
         {
             var order = await dbContext.Orders.FindAsync(orderId);
@@ -208,8 +199,5 @@ namespace Men_Of_Varna.Services
             dbContext.Orders.Remove(order);
             await dbContext.SaveChangesAsync();
         }
-
-
-
     }
 }

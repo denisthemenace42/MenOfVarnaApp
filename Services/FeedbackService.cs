@@ -15,7 +15,6 @@ namespace Men_Of_Varna.Services
             this.dbContext = dbContext;
         }
 
-
         public async Task SubmitFeedbackAsync(Feedback feedback)
         {
             dbContext.Feedbacks.Add(feedback);
@@ -31,7 +30,7 @@ namespace Men_Of_Varna.Services
                       (feedback, user) => new FeedbackViewModel
                       {
                           Id = feedback.Id,
-                          UserId = user.Email, 
+                          UserId = user.Email,
                           Content = feedback.Content,
                           SubmittedOn = feedback.SubmittedOn
                       })
@@ -54,6 +53,5 @@ namespace Men_Of_Varna.Services
                 throw new Exception("Feedback not found.");
             }
         }
-
     }
 }

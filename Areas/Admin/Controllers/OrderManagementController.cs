@@ -1,10 +1,12 @@
 ﻿using Men_Of_Varna.Areas.Admin.ViewModels;
 using Men_Of_Varna.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Men_Of_Varna.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class OrderManagementController : Controller
     {
         private readonly IOrderService _orderService;
@@ -14,7 +16,6 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
             _orderService = orderService;
         }
 
-        // GET: Admin/OrderManagement/Index
         public async Task<IActionResult> Index()
         {
             var orders = await _orderService.GetAllOrdersAsync();
@@ -30,7 +31,6 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
             return View(viewModel);
         }
 
-        // POST: Admin/OrderManagement/ChangeOrderStatus
         [HttpPost]
         public async Task<IActionResult> ChangeOrderStatus(int orderId, string status)
         {
@@ -39,7 +39,6 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Admin/OrderManagement/Details/5
         public async Task<IActionResult> Details(int id)
         {
             var order = await _orderService.GetOrderByIdAsync(id);
@@ -61,7 +60,7 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
                 {
                     Id = op.Product.Id,
                     Name = op.Product.Name,
-                    PictureUrl = op.Product.PictureUrl, // New: Picture for product
+                    PictureUrl = op.Product.PictureUrl, 
                     Price = op.Product.Price,
                     Quantity = op.Quantity
                 }).ToList()
@@ -70,7 +69,6 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
             return View(viewModel);
         }
 
-        // POST: Admin/OrderManagement/DeleteOrder
         [HttpPost]
         public async Task<IActionResult> DeleteOrder(int orderId)
         {
