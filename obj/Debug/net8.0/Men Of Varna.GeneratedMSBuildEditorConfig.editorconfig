@@ -1,19 +1,11 @@
 is_global = true
 build_property.TargetFramework = net8.0
-build_property.TargetFramework = net8.0
-build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
-build_property.UsingMicrosoftNETSdkWeb = true
-build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
-build_property.InvariantGlobalization = 
-build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Men_Of_Varna
 build_property.RootNamespace = Men_Of_Varna
@@ -26,158 +18,158 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\CSHARP_MenOfVarnaApp_Nov2024
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/FeedbackManagement/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmVlZGJhY2tNYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/FeedbackManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xGZWVkYmFja01hbmFnZW1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/OrderManagement/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJNYW5hZ2VtZW50XERldGFpbHMuY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/OrderManagement/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xPcmRlck1hbmFnZW1lbnRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/OrderManagement/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJNYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/OrderManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xPcmRlck1hbmFnZW1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/UserManagement/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZW1lbnRcSW5kZXguY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/UserManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xVc2VyTWFuYWdlbWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Admin/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xBZG1pblxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xJZGVudGl0eVxQYWdlc1xBY2NvdW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xJZGVudGl0eVxQYWdlc1xBY2NvdW50XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/Account/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xJZGVudGl0eVxQYWdlc1xBY2NvdW50XF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xJZGVudGl0eVxQYWdlc1xfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xJZGVudGl0eVxQYWdlc1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxBcmVhc1xJZGVudGl0eVxQYWdlc1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWRkLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Event/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xFdmVudFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGVsZXRlLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Event/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xFdmVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlscy5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Event/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xFdmVudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRWRpdC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xFdmVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xFdmVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Event/MyEvents.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcTXlFdmVudHMuY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Event/MyEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xFdmVudFxNeUV2ZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Feedback/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcSW5kZXguY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Feedback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xGZWVkYmFja1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xIb21lXFByaXZhY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Order/Checkout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Order/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xPcmRlclxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Order/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xPcmRlclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Order/History.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSGlzdG9yeS5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Order/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xPcmRlclxIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Order/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xPcmRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/404.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXDQwNC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Shared/404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTaGFyZWRcNDA0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/500.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXDUwMC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Shared/500.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTaGFyZWRcNTAwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTaGFyZWRcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTaGFyZWRcX0xvZ2luUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Store/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcQWRkLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Store/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTdG9yZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Store/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcRGVsZXRlLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Store/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTdG9yZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Store/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcRGV0YWlscy5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Store/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTdG9yZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Store/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcRWRpdC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Store/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTdG9yZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Store/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcSW5kZXguY3NodG1s
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Store/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTdG9yZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSHARP_MenOfVarnaApp_Nov2024/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-9q47t7elbf
+[D:/CSHARP_MenOfVarnaApp_Nov2024/MOV.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TU9WLldlYlxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-82d9w3ltkb

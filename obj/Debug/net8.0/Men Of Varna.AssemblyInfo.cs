@@ -11,12 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Horizons-0b7fcf7e-c2d7-4a45-8c70-1ea5b1f0c3b9")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Men Of Varna")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ea6caf266d13b8c79eed26c40d08fa562081fe2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5977339e3f277640221b67f89af97742e2a40907")]
 [assembly: System.Reflection.AssemblyProductAttribute("Men Of Varna")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Men Of Varna")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

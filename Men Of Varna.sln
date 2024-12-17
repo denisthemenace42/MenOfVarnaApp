@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9CFF09A0-1955-4834-BCC5-0A26EF41BBB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOV.Data", "..\MOV.Data\MOV.Data.csproj", "{82039E6C-3FFF-4843-8FD1-D8CCDDEAC743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOV.Data", "..\MOV.Data\MOV.Data.csproj", "{82039E6C-3FFF-4843-8FD1-D8CCDDEAC743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOV.Data.Models", "..\MOV.Data.Models\MOV.Data.Models.csproj", "{B57246B0-050C-4147-83F1-2737632D60E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOV.Data.Models", "..\MOV.Data.Models\MOV.Data.Models.csproj", "{B57246B0-050C-4147-83F1-2737632D60E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOV.ViewModels", "..\MOV.ViewModels\MOV.ViewModels.csproj", "{0EDAA204-24EB-4CFC-AEEB-DB1393563D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOV.ViewModels", "..\MOV.ViewModels\MOV.ViewModels.csproj", "{0EDAA204-24EB-4CFC-AEEB-DB1393563D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOV.Infrastructure", "..\MOV.Infrastructure\MOV.Infrastructure.csproj", "{F47F2A03-9FE3-4F6C-944C-D996BB523609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOV.Infrastructure", "..\MOV.Infrastructure\MOV.Infrastructure.csproj", "{F47F2A03-9FE3-4F6C-944C-D996BB523609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOV.Services.Data", "..\MOV.Services.Data\MOV.Services.Data.csproj", "{3F732716-8380-4E98-8DA9-CB86387F8B61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOV.Services.Data", "..\MOV.Services.Data\MOV.Services.Data.csproj", "{3F732716-8380-4E98-8DA9-CB86387F8B61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOV.Common", "..\MOV.Common\MOV.Common.csproj", "{C4D49232-968A-4AA0-AC8D-B8EB0D296F27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOV.Common", "..\MOV.Common\MOV.Common.csproj", "{C4D49232-968A-4AA0-AC8D-B8EB0D296F27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
