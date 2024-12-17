@@ -1,8 +1,7 @@
-﻿
-using Men_Of_Varna.Controllers;
-using Men_Of_Varna.Models;
+﻿using Men_Of_Varna.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MOV.ViewModels;
 using System.Diagnostics;
 
 namespace Horizons.Controllers

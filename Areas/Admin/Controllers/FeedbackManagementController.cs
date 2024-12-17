@@ -1,7 +1,6 @@
-﻿using Men_Of_Varna.Contracts;
-using Men_Of_Varna.Services;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MOV.Services.Data.Interfaces;
 using System.Threading.Tasks;
 
 namespace Men_Of_Varna.Areas.Admin.Controllers
@@ -32,7 +31,6 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
             try
             {
                 await _feedbackService.DeleteFeedbackAsync(id);
-                TempData["SuccessMessage"] = "Feedback deleted successfully!";
             }
             catch (Exception ex)
             {

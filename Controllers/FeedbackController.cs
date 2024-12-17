@@ -1,10 +1,9 @@
-﻿using Men_Of_Varna.Contracts;
-using Men_Of_Varna.Data.Models;
-using Men_Of_Varna.Models.Feedback;
-using Men_Of_Varna.Services;
+﻿using MOV.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MOV.Services.Data.Interfaces;
+using MOV.ViewModels.Feedback;
 
 namespace Men_Of_Varna.Controllers
 {

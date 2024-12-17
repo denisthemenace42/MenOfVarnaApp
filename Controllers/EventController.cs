@@ -1,13 +1,10 @@
-﻿using Men_Of_Varna.Contracts;
-using Men_Of_Varna.Data.Models;
-using Men_Of_Varna.Models;
-using Men_Of_Varna.Models.Events;
-using Men_Of_Varna.Services;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MOV.Services.Data.Interfaces;
+using MOV.ViewModels.Events;
 using System.Linq;
 using System.Security.Claims;
 

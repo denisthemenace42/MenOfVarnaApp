@@ -1,4 +1,4 @@
-﻿@using Men_Of_Varna.Models.Store
+﻿@using MOV.ViewModels.Store
 @model ProductDetailViewModel
 
 @{
@@ -11,7 +11,6 @@
 <hr />
 
 <div class="row justify-content-center" style="margin: 0 auto; max-width: 800px;">
-    <!-- Product Image -->
     <div class="col-md-4 text-center">
         @if (!string.IsNullOrEmpty(Model.PictureUrl))
         {
@@ -23,7 +22,6 @@
         }
     </div>
 
-    <!-- Product Details -->
     <div class="col-md-8">
         <div class="card-body">
             <p class="card-text">@Model.Description</p>
@@ -58,7 +56,6 @@
     </div>
 </div>
 
-<!-- Comments Section -->
 <div class="mt-4">
     <h3>Comments</h3>
     <div class="comments-list">

@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
@@ -29,7 +30,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\MOV.Common\MOV.Common.csproj" />
+    <ProjectReference Include="..\MOV.Data\MOV.Data.csproj" />
+    <ProjectReference Include="..\MOV.Infrastructure\MOV.Infrastructure.csproj" />
+    <ProjectReference Include="..\MOV.Services.Data\MOV.Services.Data.csproj" />
+    <ProjectReference Include="..\MOV.ViewModels\MOV.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

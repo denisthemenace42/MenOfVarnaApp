@@ -1,9 +1,10 @@
-using Men_Of_Varna.Contracts;
-using Men_Of_Varna.Services;
-using Men_Of_Varna.Data;
+using MOV.Services;
+using MOV.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Men_Of_Varna.Common;
+using MOV.Services.Data.Interfaces;
+using MOV.Services.Data;
+using MOV.Common;
 
 namespace Men_Of_Varna
 {
@@ -99,7 +100,6 @@ namespace Men_Of_Varna
 
             app.UseStatusCodePagesWithReExecute("/Error/{0}");
             app.UseSession();
-
             app.UseRouting();
 
             app.UseAuthentication();
@@ -113,7 +113,7 @@ namespace Men_Of_Varna
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.MapRazorPages(); // Ensure this is last!
+            app.MapRazorPages(); 
 
             app.Run();
         }

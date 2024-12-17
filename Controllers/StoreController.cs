@@ -1,13 +1,10 @@
-﻿using Men_Of_Varna.Contracts;
-using Men_Of_Varna.Data.Models;
-using Men_Of_Varna.Models.Events;
-using Men_Of_Varna.Models.Store;
-using Men_Of_Varna.Services;
+﻿using MOV.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MOV.Services.Data.Interfaces;
+using MOV.ViewModels.Store;
 using System.ComponentModel.DataAnnotations;
-using CommentViewModel = Men_Of_Varna.Models.Store.CommentViewModel;
 
 namespace Men_Of_Varna.Controllers
 {
@@ -156,7 +153,6 @@ namespace Men_Of_Varna.Controllers
         }
 
         [HttpGet]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit([FromRoute] int id)
         {
             if (id <= 0) return BadRequest();

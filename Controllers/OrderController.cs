@@ -1,9 +1,8 @@
-﻿using Men_Of_Varna.Contracts;
-using Men_Of_Varna.Data.Models;
-using Men_Of_Varna.Models.Order;
+﻿using MOV.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+using MOV.Services.Data.Interfaces;
+using MOV.ViewModels.Order;
 namespace Men_Of_Varna.Controllers
 {
     public class OrderController : BaseController
@@ -263,7 +262,7 @@ namespace Men_Of_Varna.Controllers
                 ShippingZip = order.ShippingZip,
                 OrderStatus = order.OrderStatus,
                 OrderTotal = order.OrderProducts.Sum(op => op.Product.Price * op.Quantity),
-                Products = order.OrderProducts.Select(op => new OrderProductViewModel
+                Products = order.OrderProducts.Select(op => new MOV.ViewModels.Order.OrderProductViewModel
                 {
                     Name = op.Product.Name,
                     Quantity = op.Quantity,

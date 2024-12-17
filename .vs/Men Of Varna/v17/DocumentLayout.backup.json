@@ -3,7 +3,8 @@
   "WorkspaceRootPath": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA88A062-D664-40F2-B713-335D05E7FFDE}|..\\Tests\\Tests.csproj|d:\\tests\\unittests\\helpers\\mockdbsethelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|d:\\csharp_menofvarnaapp_nov2024\\areas\\admin\\views\\feedbackmanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62B8D6AC-E980-4BA4-9390-4A29861B11DC}|Men Of Varna.csproj|solutionrelative:areas\\admin\\views\\feedbackmanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,25 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MockDbSetHelper.cs",
-              "DocumentMoniker": "D:\\Tests\\UnitTests\\Helpers\\MockDbSetHelper.cs",
-              "RelativeDocumentMoniker": "..\\Tests\\UnitTests\\Helpers\\MockDbSetHelper.cs",
-              "ToolTip": "D:\\Tests\\UnitTests\\Helpers\\MockDbSetHelper.cs",
-              "RelativeToolTip": "..\\Tests\\UnitTests\\Helpers\\MockDbSetHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T08:37:59.24Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Views\\FeedbackManagement\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\FeedbackManagement\\Index.cshtml",
+              "ToolTip": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\Areas\\Admin\\Views\\FeedbackManagement\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\FeedbackManagement\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T15:57:11.039Z",
+              "EditorCaption": ""
             }
           ]
         }

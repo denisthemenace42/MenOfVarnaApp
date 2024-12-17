@@ -1,7 +1,7 @@
 ﻿using Men_Of_Varna.Areas.Admin.ViewModels;
-using Men_Of_Varna.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MOV.Services.Data.Interfaces;
 
 namespace Men_Of_Varna.Areas.Admin.Controllers
 {
@@ -70,10 +70,10 @@ namespace Men_Of_Varna.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteOrder(int orderId)
         {
             await _orderService.DeleteOrderAsync(orderId);
-            TempData["SuccessMessage"] = "Order deleted successfully.";
             return RedirectToAction("Index");
         }
     }

@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\Men Of Varna.bundle.scp.css"
     },
     {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\android-chrome-192x192.png",
+      "PackagePath": "staticwebassets\\android-chrome-192x192.png"
+    },
+    {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\android-chrome-512x512.png",
+      "PackagePath": "staticwebassets\\android-chrome-512x512.png"
+    },
+    {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\apple-touch-icon.png"
+    },
+    {
       "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
       "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\favicon-16x16.png"
+    },
+    {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\favicon-32x32.png"
     },
     {
       "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\favicon.ico",
@@ -283,6 +303,10 @@
     {
       "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\CSHARP_MenOfVarnaApp_Nov2024\\wwwroot\\site.webmanifest",
+      "PackagePath": "staticwebassets\\site.webmanifest"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Men Of Varna.Microsoft.AspNetCore.StaticWebAssets.props",
